@@ -60,5 +60,5 @@ Blog：[阿卡林の笔记 (aiphm.cn)](https://www.aiphm.cn/share/index.html)
   - 打磨移动端细节，移动端优先响应式，兼容主流现代浏览器，优化了众多细节bug。
 
 ## 使用方法
-下载附件，运行Trilium Notes，右键左侧树导航中Trilium 扩展，导入到笔记（取消勾选安全导入），按F5或ctrl+r刷新页面。
+下载附件，运行Trilium Notes，右键左侧树导航，导入到笔记（取消勾选安全导入），按F5或ctrl+r刷新页面。
 博客主题：Trilium X Akari 博客主题使用介绍详见我的博客文章：https://www.aiphm.cn/share/EFzcB6z2IYGo
