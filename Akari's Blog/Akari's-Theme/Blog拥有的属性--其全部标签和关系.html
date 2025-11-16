@@ -1,0 +1,574 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>Blog拥有的属性--其全部标签和关系</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>Blog拥有的属性--其全部标签和关系</h1>
+
+      <div class="ck-content">
+        <div class="content">
+          <div class="ck-content">
+            <blockquote>
+              <p>新增功能后，你需要把新的标签和关系配置到&nbsp;<a class="reference-link" href="../../Akari's%20Blog.html">Akari's Blog</a>页面拥有的属性里！由于属性和标签太多了，不方便修改编辑，所以有了这个辅助页面。这些属性其实就等于是blog的配置config。</p>
+            </blockquote>
+             <h2>配置</h2>
+
+            <blockquote>
+              <p>配置前先把&nbsp;<a class="reference-link" href="../Akari's-Theme.html">Akari's-Theme</a>笔记的下方两个属性去掉，否则会导致关系配置时搜到不配置文件。等配置好后再把这两个属性加回去。</p>
+              <p>#shareHiddenFromTree(可继承的)&nbsp;</p>
+              <p>#archived(可继承的)&nbsp;</p>
+              <hr>
+              <ul>
+                <li>#shareHiddenFromTree
+                  <ul>
+                    <li>范围：共享子树（~share）</li>
+                    <li>作用：把这条笔记从共享站点的「左侧目录树」里隐藏掉，但笔记本身仍然可以通过 URL 直接访问。</li>
+                  </ul>
+                </li>
+              </ul>
+              <hr>
+              <ul>
+                <li>#archived
+                  <ul>
+                    <li>范围：任意笔记</li>
+                    <li>作用：把笔记标记为“已归档”。</li>
+                    <li>视觉上：标题会变灰、出现小归档图标；</li>
+                    <li>功能上：
+                      <br>– 默认不再出现在“全文搜索”结果里（除非你在搜索框里显式勾选 Include archived）；
+                      <br>– 不再出现在“快速搜索”（Ctrl+P）的自动补全里；
+                      <br>– 保护树：运行“删除已完成分支”等维护脚本时会被跳过。</li>
+                  </ul>
+                </li>
+              </ul>
+            </blockquote>
+            <hr>
+            <p>~shareTemplate(可继承的)=<a class="reference-link" href="WhiteMinimalist-Theme.ejs">WhiteMinimalist-Theme.ejs</a>&nbsp;&nbsp;</p>
+            <p>#newNotesOnTop(可继承的)</p>
+            <p>#label:siteName="promoted,alias=博客名称,single,text"</p>
+            <p>#label:bloggerName="promoted,alias=博客昵称,single,text"</p>
+            <p>#label:blogStartTime="promoted,alias=博客开始时间,single,datetime"</p>
+            <p>#label:siteKeywords="promoted,alias=网站关键词,single,text"</p>
+            <p>#label:shareDescription="promoted,alias=网站描述,single,text"</p>
+            <p>#label:motto="promoted,alias=座右铭,single,text"</p>
+            <p>#label:siteDescription="promoted,alias=mate描述,single,text"</p>
+            <p>#label:record="promoted,alias=备案号,single,text"</p>
+            <p>#label:recordLink="promoted,alias=公安地址,single,text"</p>
+            <p>#iconClass="bx bx-highlight"</p>
+            <p>#shareRoot</p>
+            <p>#label:isAnnouncement="promoted,alias=显示公告,single,boolean"</p>
+            <p>#label:announcement="promoted,alias=公告,single,text"</p>
+            <p>#sorted=blogItemOrder</p>
+            <p>~homepageBG=<a class="reference-link" href="imgs/%E4%B8%BB%E9%A1%B5%E8%83%8C%E6%99%AF.jpg">主页背景</a>&nbsp;&nbsp;</p>
+            <p>#ishomepageBG=true</p>
+            <p>#enableRecommendedReading=true</p>
+            <p>#siteKeywords="振动分析、故障诊断、PHM知识库、笔记知识库、Trilium"</p>
+            <p>#record=喵ICP备20253530号</p>
+            <p>#recordLink="https://icp.hentioe.dev/sites/20253530"</p>
+            <p>~bloggerAvatar=<a class="reference-link" href="imgs/logo.png">logo.png</a>&nbsp;&nbsp;</p>
+            <p>~shareFavicon(可继承的)=<a class="reference-link" href="imgs/Favicon.png">Favicon.png</a>&nbsp;&nbsp;</p>
+            <p>#enableTwikoo=true</p>
+            <p>#envId="https://www.trilium.dpdns.org/twikoo/"</p>
+            <p>#enableVisitors</p>
+            <p>~linkCss(可继承的)=<a class="reference-link" href="CSS%20style/shmaur-linkCss.css">shmaur-linkCss</a>&nbsp;&nbsp;</p>
+            <p>~homeCss(可继承的)=<a class="reference-link" href="CSS%20style/shmaur-homeCss.css">shmaur-homeCss</a>&nbsp;&nbsp;</p>
+            <p>~navCss(可继承的)=<a class="reference-link" href="CSS%20style/shmaur-navCss.css">shmaur-navCss</a>
+
+            </p>
+            <p>~footerCss(可继承的)=<a class="reference-link" href="CSS%20style/shmaur-footerCss.css">shmaur-footerCss</a>&nbsp;&nbsp;</p>
+            <p>~mainCss(可继承的)=<a class="reference-link" href="CSS%20style/shmaur-mainCss.css">shmaur-mainCss</a>
+
+            </p>
+            <p>#siteDescription(可继承的)="使用Trilium Notes构建的开源专家知识库。"</p>
+            <p>~messages(可继承的)=<a class="reference-link" href="CSS%20style/shmaur-messages.css">shmaur-messages</a>&nbsp;</p>
+            <p>#announcement="由于up主水平有限，整理的笔记中难免有错误或不妥之处，诚邀您到评论区或我B站的账号视频或文章评论区友好讨论、批评指正。"</p>
+            <p>~viewerJS(可继承的)=<a class="reference-link" href="Image%20Zoom%20plugin/viewer.min.js">viewer.min.js</a>
+
+            </p>
+            <p>~viewerCSS(可继承的)=<a class="reference-link" href="Image%20Zoom%20plugin/viewer.min.css">viewer.min.css</a>&nbsp;&nbsp;</p>
+            <p>#motto="呐!希望您每天都有好心情ヾ(≧▽≦*)o"</p>
+            <p>#siteName=阿卡林の笔记</p>
+            <p>#bloggerName=阿卡林の笔记</p>
+            <p>#blogStartTime="2025-09-12T00:00"</p>
+            <p>#shareDescription="记录和总结知识的地方；技术向，专业知识以机械设备状态监测与故障诊断技术相关内容为主。辅以各种我这个0代码基础小白使用AI工具等的经验心得。"</p>
+            <p>#enableReward=true</p>
+            <p>~wechatPay(可继承的)=<a class="reference-link" href="imgs/%E5%BE%AE%E4%BF%A1%E6%94%B6%E6%AC%BE%E7%A0%81.png">微信收款码</a>&nbsp;</p>
+            <p>~aliPay(可继承的)=<a class="reference-link" href="imgs/%E6%94%AF%E4%BB%98%E5%AE%9D%E6%94%B6%E6%AC%BE%E7%A0%81.png">支付宝收款码</a>&nbsp;</p>
+            <p>~shareCss(可继承的)=<a class="reference-link" href="Global/Ankia-Theme.css">Ankia-Theme.css</a>&nbsp;&nbsp;</p>
+            <p>~prismCSS(可继承的)=<a class="reference-link" href="Code%20highlighting%20plugin/prism.css">prism.css</a>&nbsp;</p>
+            <p>~prismJS(可继承的)=<a class="reference-link" href="Code%20highlighting%20plugin/prism.js">prism.js</a>
+
+            </p>
+            <p>~shareJs(可继承的)=<a class="reference-link" href="Global/shmaur-js.js">shmaur-js</a>
+
+            </p>
+            <p>#label:ishomepageBG="promoted,alias=主页背景,single,boolean"</p>
+            <p>#label:enableRecommendedReading="promoted,alias=推荐阅读,single,boolean"</p>
+            <p>#isAnnouncement=true</p>
+            <p>#label:enableTwikoo="promoted,alias=开启评论,single,boolean"</p>
+            <p>#label:envId="promoted,alias=评论环境ID,single,text"</p>
+            <p>#label:disableLatestCommentPane="promoted,alias=最新评论,single,boolean"</p>
+            <p>#disableLatestCommentPane=true</p>
+            <p>#label:enableReward="promoted,alias=开启赞赏,single,boolean"</p>
+            <p>#label:isBlogInfo="promoted,alias=博主信息,single,boolean"</p>
+            <p>#isBlogInfo=true</p>
+            <p>#label:mailLink="promoted,alias=邮箱,single,text"</p>
+            <p>#label:githubLink="promoted,alias=github,single,text"</p>
+            <p>#label:RSSLink="promoted,alias=RSS地址,single,text"</p>
+            <p>#label:zhihuLink="promoted,alias=知乎,single,text"</p>
+            <p>#label:sspaiLink="promoted,alias=少数派,single,text"</p>
+            <p>#label:netEaseCloudLink="promoted,alias=网易云音乐,single,text"</p>
+            <p>#label:bilibiliLink="promoted,alias=哔哩哔哩,single,text"</p>
+            <p>#label:doubanLink="promoted,alias=豆瓣,single,text"</p>
+            <p>#label:telegramLink="promoted,alias=telegram,single,text"</p>
+            <p>~twikoo(可继承的)=<a class="reference-link" href="Comment%20system%20plugin/twikoo.all.min.js">twikoo.all.min.js</a>
+
+            </p>
+            <p>~cssDoodle(可继承的)=<a class="reference-link" href="Other%20Css%20effects/css-doodle.min.js">css-doodle.min.js</a>
+
+            </p>
+            <p>#mapType=tree</p>
+            <p>~force_graph(可继承的)=<a class="reference-link" href="Knowledge%20Graph%20plugin/force-graph.min.js">force-graph.min.js</a>
+
+            </p>
+            <p>#bilibiliLink="https://space.bilibili.com/4504270/?spm_id_from=333.999.0.0"</p>
+            <p>#githubLink="https://github.com/march-7th-mini"</p>
+            <p>~kimichatJs(可继承的)=<a class="reference-link" href="AI%20Assistant%20plugin/kimi-chat.js">kimi-chat.js</a>
+
+            </p>
+            <p>~otherPageBG=<a class="reference-link" href="imgs/%E9%98%85%E8%AF%BB%E8%83%8C%E6%99%AF.png">阅读背景</a>&nbsp;&nbsp;</p>
+            <p>~collapseList(可继承的)=<a class="reference-link" href="Action%20Enhancements/collapse-list.js">collapse-list.js</a>&nbsp;</p>
+            <p>~overlayColorCSS(可继承的)=<a class="reference-link" href="overlay-color/overlay-color.css">overlay-color.css</a>&nbsp;</p>
+            <p>~overlayColorJS(可继承的)=<a class="reference-link" href="overlay-color/overlay-color.js">overlay-color.js</a>&nbsp;</p>
+            <p>~bgmJs(可继承的)=<a class="reference-link" href="BGM/bgm.js">bgm.js</a>&nbsp;&nbsp;</p>
+            <p>~mathjax(可继承的)=<a class="reference-link" href="MathRen%20plugin/tex-mml-chtml-V4-CN.js">tex-mml-chtml-V4-CN.js</a>&nbsp;</p>
+            <p>~twikoo_owo(可继承的)=<a class="reference-link" href="Comment%20system%20plugin/owo-enhance.js">owo-enhance.js</a>&nbsp;</p>
+            <p>~ribbonBg(可继承的)=<a class="reference-link" href="Other%20Css%20effects/ribbon-bg.js">ribbon-bg.js</a>&nbsp;&nbsp;</p>
+            <p>~WelcomeJS(可继承的)=<a class="reference-link" href="Other%20Css%20effects/welcome.js">welcome.js</a>&nbsp;&nbsp;</p>
+            <p>#label:enablePersonalDynamic="promoted,alias=显示说说,single,boolean"</p>
+            <p>#enablePersonalDynamic=true</p>
+            <p>~IndexExtraEffectJS(可继承的)=<a class="reference-link" href="Other%20Css%20effects/index-extra-effect.js">index-extra-effect.js</a>&nbsp;</p>
+            <hr>
+            <p>在单独的页面设置这个属性，就可实现不同的界面显示不同背景</p>
+            <p>~<span style="background-color:rgba(0,0,0,0.03);color:rgba(0,0,0,0.9);">pageBG=</span>
+
+              <a
+              class="reference-link" href="imgs/%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99%E8%83%8C%E6%99%AF.jpg">关于本站背景</a>
+            </p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <hr>
+             <h2>注释</h2>
+
+             <h3>1. 站点基础信息&nbsp;</h3>
+
+            <p># ======================= 1. 站点基础信息 ========================
+              <br># 博客标题、作者、SEO、备案等「一眼能看到的文字」</p>
+            <figure class="table">
+              <table>
+                <tbody>
+                  <tr>
+                    <td>siteName&nbsp;</td>
+                    <td>= 阿卡林の笔记</td>
+                    <td># 网站大标题（浏览器标签 + 首页）</td>
+                  </tr>
+                  <tr>
+                    <td>bloggerName&nbsp;</td>
+                    <td>= 阿卡林の笔记&nbsp;</td>
+                    <td># 作者昵称（版权区 + 侧边栏）</td>
+                  </tr>
+                  <tr>
+                    <td>blogStartTime &nbsp;&nbsp;</td>
+                    <td>= 2025-09-12T00:00</td>
+                    <td># 建站日期 → 底部「已运行 X 天」</td>
+                  </tr>
+                  <tr>
+                    <td>siteKeywords &nbsp;&nbsp;</td>
+                    <td>= 振动分析、故障诊断...&nbsp;</td>
+                    <td># SEO keywords</td>
+                  </tr>
+                  <tr>
+                    <td>shareDescription</td>
+                    <td>= 随便记录和总结知识...</td>
+                    <td># SEO description（首页）</td>
+                  </tr>
+                  <tr>
+                    <td>siteDescription</td>
+                    <td>= 使用Trilium Notes...&nbsp;</td>
+                    <td># &lt;meta name="description"&gt;</td>
+                  </tr>
+                  <tr>
+                    <td>motto&nbsp;</td>
+                    <td>= 呐!希望您每天都有好心情</td>
+                    <td># 侧边栏头像下方签名</td>
+                  </tr>
+                  <tr>
+                    <td>record &nbsp;</td>
+                    <td>= 备案号</td>
+                    <td># 底部公安备案文字</td>
+                  </tr>
+                  <tr>
+                    <td>recordLink &nbsp; &nbsp; &nbsp;</td>
+                    <td>= https://beian.miit.gov.cn/&nbsp;</td>
+                    <td># 备案号跳转链接</td>
+                  </tr>
+                </tbody>
+              </table>
+            </figure>
+             <h3>2. 视觉 / 风格开关</h3>
+
+            <p># ======================= 2. 视觉 / 风格开关 =====================
+              <br># 背景图、头像、图标等「长什么样」由它们决定</p>
+            <figure class="table">
+              <table>
+                <tbody>
+                  <tr>
+                    <td>ishomepageBG &nbsp;</td>
+                    <td>= true &nbsp;</td>
+                    <td>&nbsp;# 是否显示主页背景大图</td>
+                  </tr>
+                  <tr>
+                    <td>homepageBG &nbsp;</td>
+                    <td>= 主页背景 &nbsp;</td>
+                    <td>&nbsp;# 背景图文件（relation→图片笔记）</td>
+                  </tr>
+                  <tr>
+                    <td>shareFavicon &nbsp;&nbsp;</td>
+                    <td>= logo.png&nbsp;</td>
+                    <td># 浏览器小图标（relation→图片笔记）</td>
+                  </tr>
+                  <tr>
+                    <td>bloggerAvatar &nbsp;</td>
+                    <td>= logo.png</td>
+                    <td># 侧边栏博主头像（relation→图片笔记）</td>
+                  </tr>
+                </tbody>
+              </table>
+            </figure>
+             <h3>3. 页面功能总开关</h3>
+
+            <p># ======================= 3. 页面功能总开关 ======================
+              <br># 一句话就能开/关的「大功能」</p>
+            <figure class="table">
+              <table>
+                <tbody>
+                  <tr>
+                    <td>isAnnouncement&nbsp;</td>
+                    <td>= true&nbsp;</td>
+                    <td># 顶部公告栏开关</td>
+                  </tr>
+                  <tr>
+                    <td>announcement&nbsp;</td>
+                    <td>= "由于 up 主水平有限..."&nbsp;</td>
+                    <td># 公告正文</td>
+                  </tr>
+                  <tr>
+                    <td>enablePersonalDynamic</td>
+                    <td>= false</td>
+                    <td># 侧边栏「说说」开关</td>
+                  </tr>
+                  <tr>
+                    <td>enableRecommendedReading</td>
+                    <td>= true &nbsp;&nbsp;</td>
+                    <td># 侧边栏「推荐阅读」开关</td>
+                  </tr>
+                  <tr>
+                    <td>enableTwikoo &nbsp;&nbsp;</td>
+                    <td>= false&nbsp;</td>
+                    <td># 全局评论系统开关</td>
+                  </tr>
+                  <tr>
+                    <td>envId</td>
+                    <td>= (空) &nbsp;</td>
+                    <td># Twikoo 环境 ID（开启评论才填）</td>
+                  </tr>
+                  <tr>
+                    <td>disableLatestCommentPane</td>
+                    <td>= false&nbsp;</td>
+                    <td># 首页「最新评论」侧边栏开关</td>
+                  </tr>
+                  <tr>
+                    <td>enableReward</td>
+                    <td>= true &nbsp;&nbsp;</td>
+                    <td># 文章末尾「为 TA 充电」赞赏开关</td>
+                  </tr>
+                  <tr>
+                    <td>wechatPay&nbsp;</td>
+                    <td>= 微信收款码 &nbsp;</td>
+                    <td># 微信赞赏码（relation→图片笔记）</td>
+                  </tr>
+                  <tr>
+                    <td>aliPay &nbsp;&nbsp;</td>
+                    <td>= 支付宝收款码&nbsp;</td>
+                    <td># 支付宝赞赏码（relation→图片笔记）</td>
+                  </tr>
+                  <tr>
+                    <td>isBlogInfo &nbsp;</td>
+                    <td>= true</td>
+                    <td>&nbsp;# 侧边栏「博主信息」卡片开关</td>
+                  </tr>
+                </tbody>
+              </table>
+            </figure>
+            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>
+             <h3>4. 社交图标链接</h3>
+
+            <p># ======================= 4. 社交图标链接 ========================
+              <br># 侧边栏一排小图标，顺序即数组顺序；留空则不显示</p>
+            <figure class="table">
+              <table>
+                <tbody>
+                  <tr>
+                    <td>githubLink</td>
+                    <td>= https://github.com/xxx</td>
+                    <td>&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td>zhihuLink&nbsp;</td>
+                    <td>= https://www.zhihu.com/xxx</td>
+                    <td>&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td>bilibiliLink</td>
+                    <td>= https://space.bilibili.com/...</td>
+                    <td>&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td>RSSLink</td>
+                    <td>= (留空)&nbsp;</td>
+                    <td># RSS 订阅地址</td>
+                  </tr>
+                  <tr>
+                    <td>mailLink&nbsp;</td>
+                    <td>= (留空) &nbsp;</td>
+                    <td>&nbsp;# 点击发邮件（mailto:）</td>
+                  </tr>
+                  <tr>
+                    <td>sspaiLink&nbsp;</td>
+                    <td>= (留空) &nbsp;</td>
+                    <td># 少数派</td>
+                  </tr>
+                  <tr>
+                    <td>netEaseCloudLink&nbsp;</td>
+                    <td>= (留空) &nbsp;</td>
+                    <td># 网易云音乐</td>
+                  </tr>
+                  <tr>
+                    <td>doubanLink</td>
+                    <td>= (留空) &nbsp;</td>
+                    <td># 豆瓣</td>
+                  </tr>
+                  <tr>
+                    <td>telegramLink</td>
+                    <td>= (留空) &nbsp;</td>
+                    <td># Telegram</td>
+                  </tr>
+                </tbody>
+              </table>
+            </figure>
+            <p>&nbsp;</p>
+             <h3>5. 前端资源（relation 指向文件笔记）</h3>
+
+            <p># ======================= 5. 前端资源（relation 指向文件笔记）=====
+              <br># 换主题色、换代码高亮风格、升级组件库 → 换这些文件即可</p>
+            <figure class="table">
+              <table>
+                <tbody>
+                  <tr>
+                    <td>prismCSS</td>
+                    <td>= prism.css&nbsp;</td>
+                    <td># 代码高亮样式</td>
+                  </tr>
+                  <tr>
+                    <td>prismJS &nbsp;&nbsp;</td>
+                    <td>= prism.js &nbsp;</td>
+                    <td># 代码高亮脚本</td>
+                  </tr>
+                  <tr>
+                    <td>viewerCSS &nbsp;</td>
+                    <td>= viewer.min.css &nbsp;&nbsp;</td>
+                    <td># 图片灯箱样式</td>
+                  </tr>
+                  <tr>
+                    <td>viewerJS&nbsp;</td>
+                    <td>= viewer.min.js &nbsp; &nbsp;&nbsp;</td>
+                    <td># 图片灯箱脚本</td>
+                  </tr>
+                  <tr>
+                    <td>mathjax &nbsp;&nbsp;</td>
+                    <td>= tex-mml-chtml-V4.js &nbsp;</td>
+                    <td># 数学公式渲染</td>
+                  </tr>
+                  <tr>
+                    <td>mathjaxMenu</td>
+                    <td>= menu.min-V4js &nbsp;</td>
+                    <td># 数学公式渲染右键菜单</td>
+                  </tr>
+                  <tr>
+                    <td>twikoo &nbsp; &nbsp;</td>
+                    <td>= twikoo.all.min.js &nbsp;</td>
+                    <td>&nbsp;# 评论系统前端</td>
+                  </tr>
+                  <tr>
+                    <td>cssDoodle</td>
+                    <td>= css-doodle.min.js &nbsp;</td>
+                    <td># 随机背景花纹</td>
+                  </tr>
+                  <tr>
+                    <td>force_graph &nbsp;&nbsp;</td>
+                    <td>= force-graph.min.js&nbsp;</td>
+                    <td># 知识图谱力导向图</td>
+                  </tr>
+                  <tr>
+                    <td>linkCss &nbsp;</td>
+                    <td>= shmaur-linkCss&nbsp;</td>
+                    <td># 友链页面样式</td>
+                  </tr>
+                  <tr>
+                    <td>homeCss&nbsp;</td>
+                    <td>= shmaur-homeCss &nbsp; &nbsp;</td>
+                    <td># 首页样式</td>
+                  </tr>
+                  <tr>
+                    <td>navCss&nbsp;</td>
+                    <td>&nbsp;= shmaur-navCss &nbsp;</td>
+                    <td># 导航栏样式</td>
+                  </tr>
+                  <tr>
+                    <td>footerCss &nbsp;</td>
+                    <td>= shmaur-footerCss&nbsp;</td>
+                    <td># 底部样式</td>
+                  </tr>
+                  <tr>
+                    <td>mainCss &nbsp; &nbsp;</td>
+                    <td>= shmaur-mainCss &nbsp;&nbsp;</td>
+                    <td># 正文样式</td>
+                  </tr>
+                  <tr>
+                    <td>messages &nbsp;&nbsp;</td>
+                    <td>= shmaur-messages &nbsp;&nbsp;</td>
+                    <td># 留言板样式</td>
+                  </tr>
+                  <tr>
+                    <td>shareCss &nbsp;</td>
+                    <td>= Ankia-Theme.css &nbsp;</td>
+                    <td># 全局自定义样式</td>
+                  </tr>
+                  <tr>
+                    <td>shareJs &nbsp;&nbsp;</td>
+                    <td>= shmaur-js &nbsp;</td>
+                    <td># 全局自定义脚本</td>
+                  </tr>
+                </tbody>
+              </table>
+            </figure>
+            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+              &nbsp; &nbsp; &nbsp;&nbsp;</p>
+             <h3>6. 模板与结构控制</h3>
+
+            <p># ======================= 6. 模板与结构控制 ========================
+              <br># 决定「用什么模板渲染」+「子笔记怎么排序」</p>
+            <figure class="table">
+              <table>
+                <tbody>
+                  <tr>
+                    <td>shareTemplate&nbsp;</td>
+                    <td>= WhiteMinimalist-Theme.ejs &nbsp;</td>
+                    <td># 当前模板文件</td>
+                  </tr>
+                  <tr>
+                    <td>sorted&nbsp;</td>
+                    <td>= blogItemOrder &nbsp;</td>
+                    <td># 子笔记排序字段</td>
+                  </tr>
+                  <tr>
+                    <td>newNotesOnTop</td>
+                    <td>= (继承) &nbsp; &nbsp;</td>
+                    <td># 新建子笔记自动置顶</td>
+                  </tr>
+                  <tr>
+                    <td>mapType &nbsp;</td>
+                    <td>= tree &nbsp;</td>
+                    <td># 知识图谱默认树状布局</td>
+                  </tr>
+                </tbody>
+              </table>
+            </figure>
+            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
+             <h3>7. 杂项 / 预留钩子</h3>
+
+            <p># ======================= 7. 杂项 / 预留钩子 =========================
+              <br># 角色卡片下方跳转第三方的超链接，不想显示自己不常用的，就删除对应的</p>
+            <figure class="table">
+              <table>
+                <tbody>
+                  <tr>
+                    <td>mailLink &nbsp;</td>
+                    <td>= (留空)&nbsp;</td>
+                    <td># 预留邮箱链接</td>
+                  </tr>
+                  <tr>
+                    <td>RSSLink &nbsp;&nbsp;</td>
+                    <td>= (留空) &nbsp;</td>
+                    <td># 预留 RSS</td>
+                  </tr>
+                </tbody>
+              </table>
+            </figure>
+             <h3>8. 其他注意事项</h3>
+
+            <ul>
+              <li>在主题根目录拥有的属性中添加<code>#swapInfoCard</code> - 可以交换主页左右边栏（<strong>博主信息</strong>与<strong>说说</strong>）的位置。目前修改后的布局会导致文章大纲导航侧边栏与笔记目录和信息卡片在左侧重叠，不建议启用</li>
+            </ul>
+             <h3>9.z-index元素堆叠顺序</h3>
+
+            <ul>
+              <li>shmaur-mainCss
+                <ul>
+                  <li>.code-toolbar &nbsp;代码块任务栏 红绿灯 栏样式 &nbsp;z-index: 1;</li>
+                  <li>#toc-pane &nbsp;文章右侧页面大纲， &nbsp;z-index: 1;</li>
+                  <li>#catalogue,#outline 手机端目录和大纲按钮样式 z-index: 2;</li>
+                  <li>#onGoTop 回到顶部按钮 &nbsp; z-index: 2;</li>
+                  <li>.searchContainerStyle &nbsp;搜索容器样式 &nbsp; z-index: 1000;</li>
+                  <li>#toc-pane,#outline-menu-nav &nbsp;移动端目录面板样式 &nbsp;z-index: 99;</li>
+                  <li>.toc-pane-content 页面大纲 z-index: 100;</li>
+                  <li>pre .code-fold-btn &nbsp;代码块底部固定折叠/展开按钮 &nbsp; z-index: 10;</li>
+                  <li>pre .code-fold-btn &nbsp;代码块底部固定折叠/展开按钮 &nbsp; z-index: 10; &nbsp;（shmaur-js里相同属性也有一条）</li>
+                  <li>.code-toolbar-fold &nbsp;代码块头部任务栏固定折叠/展开按钮 &nbsp; z-index: 1;</li>
+                </ul>
+              </li>
+              <li>shmaur-messages
+                <ul>
+                  <li>.msg &nbsp;特效字体容器 &nbsp;z-index: 2; &nbsp; &nbsp;</li>
+                  <li>.bubbles &nbsp;气泡背景 &nbsp; z-index: 1;</li>
+                </ul>
+              </li>
+              <li>shmaur-homeCss
+                <ul>
+                  <li>.g-container .title &nbsp;标题的伪元素动画 &nbsp; z-index: 1</li>
+                </ul>
+              </li>
+              <li>shmaur-navCss
+                <ul>
+                  <li>#navigationBar &nbsp;顶部导航栏容器 &nbsp;z-index: 1001;</li>
+                  <li>.navbar-links-mobile &nbsp;移动端全屏导航面板 &nbsp;z-index: 9999;</li>
+                  <li>#toggleMenuButton &nbsp;导航栏汉堡按钮 &nbsp;z-index: 1000;</li>
+                  <li>.left-menu-nav &nbsp;左侧树形目录 &nbsp;z-index: 1;</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>

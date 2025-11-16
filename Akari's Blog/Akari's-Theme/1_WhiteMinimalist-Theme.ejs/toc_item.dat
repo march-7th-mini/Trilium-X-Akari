@@ -1,0 +1,36 @@
+<!-- 
+  ================================
+  toc_item
+  右侧网页大纲导航，下方可自定义折叠箭头的大小和颜色
+  ================================
+-->
+<%
+const slugify = (text) => text.replace(/\s/g, " ");
+const regex = /(<([^>]+)>)/ig;
+const slug = slugify(entry.name).replace(regex, '');
+%>
+
+<li>
+    <div class="toc_title">
+   
+    
+        <span class="arrow">
+             <% if (entry.children.length > 0) { %>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width: 15px; height: 15px;  color: #fff;">
+            <path d="M3 8L12 17L21 8"></path>
+          </svg>
+             <% } %>  
+        </span>
+
+    <a href="#<%= slug %>">
+        <%= slug %>
+    </a>
+    </div>
+    <% if (entry.children.length > 0) { %>
+        <ul style="display: block;">
+            <% for (const subentry of entry.children) { %>
+                <%- include('toc_item', {entry: subentry}) %>
+            <% } %>
+        </ul>
+    <% } %>
+</li>

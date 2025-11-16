@@ -1,0 +1,60 @@
+/*
+ * WhiteMinimalist-Theme v1.1
+ * https://www.shmaur.com/
+ * shmaur-linkCss
+ * Licensed Apache-2.0 © shmaur
+ * 友链样式，增加注释Akari_404
+ * Akari's Blog:  https://www.aiphm.cn/share/index.html
+ */
+
+/* 当鼠标悬停在友链卡片上时，整体放大 4% */
+.fLink:hover {
+    transform: scale(1.04);
+}
+
+/* 友链整体容器：使用弹性布局，允许换行，从左开始对齐 */
+.fLinkContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+/* 单个友链卡片样式 */
+.fLinkContainer .cf-friends-link {
+    display: flex;               /* 弹性布局，便于内部元素水平排列 */
+    border: 1px solid #ededed;   /* 浅灰色边框 */
+    padding: 14px 16px;          /* 内边距：上下 14px，左右 16px */
+    border-radius: 6px;          /* 圆角 6px */
+    width: 310px;                /* 固定宽度 310px */
+    flex-direction: row;         /* 水平排列（头像在左，文字在右） */
+    max-height: none;            /* 不限制最大高度 */
+    min-height: auto;            /* 最小高度由内容决定 */
+    margin: 10px;                /* 每个卡片之间留出 10px 间隙 */
+    align-items: center;         /* 垂直居中内部元素 */
+    transition: transform .3s ease-in-out; /* 为悬停放大效果提供平滑过渡 */
+}
+
+/* 友链头像：圆形，右侧留 12px 间距，取消底部外边距 */
+.fLinkContainer .cf-friends-link .cf-friends-avatar {
+    border-radius: 50% !important;
+    margin-right: 12px !important;
+    margin-bottom: 0 !important;
+}
+
+/* 友链标题文字颜色 */
+#fLinkTitle {
+    color: #393939;
+}
+
+/* 友链描述文字样式：
+   字号 14px，浅灰色，限制最多显示两行，
+   超出部分使用省略号隐藏 */
+#fLinkDes {
+    font-size: 14px;
+    color: #ababab;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

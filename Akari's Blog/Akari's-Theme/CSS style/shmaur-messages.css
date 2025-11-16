@@ -1,0 +1,108 @@
+/*!
+ * WhiteMinimalist-Theme v1.1
+ * https://www.shmaur.com/
+ * shmaur-messages
+ * Licensed Apache-2.0 © shmaur
+ * 修改样式，叠加气泡背景并增加注释,霓虹流动描边，用来美化主页Akari_404
+ * 气泡数量等+霓虹字特效显示文字可到 index-extra-effect.js 进行修改
+ * Akari's Blog:  https://www.aiphm.cn/share/index.html
+ */
+
+
+/* ========= 主容器 ========= */
+.msg {
+  position: absolute;
+  left: 50%;
+  top: 85%;
+  transform: translate(-50%, -50%);
+  z-index: 2;          /* 保证在背景图上方 */
+  width: 90vw;
+  max-width: 320px;
+  height: 320px;
+  margin: auto;
+  filter: drop-shadow(0 12px 24px rgba(60, 70, 100, .12));
+  transition: transform .4s ease;
+  cursor: default;   /* 禁用 I 形光标 */
+}
+
+.msg svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ========= 霓虹描边 + 扫光 ========= */
+.text-copy {
+  fill: none;
+  stroke-width: 3px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 6% 24%;
+  animation: stroke-offset 12s ease-in-out infinite;
+}
+.text-copy:nth-child(1) { stroke: var(--mint); stroke-dashoffset: 6%; }
+.text-copy:nth-child(2) { stroke: var(--cat-pink); stroke-dashoffset: 12%; }
+.text-copy:nth-child(3) { stroke: #A7E9FF; stroke-dashoffset: 18%; }
+.text-copy:nth-child(4) { stroke: #C9B0FF; stroke-dashoffset: 24%; }
+.text-copy:nth-child(5) { stroke: var(--deep-blue); stroke-dashoffset: 30%; }
+
+/* 扫光 */
+.text-copy::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+  animation: shine 4s infinite;
+}
+@keyframes shine {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+@keyframes stroke-offset {
+  50% {
+    stroke-dashoffset: 35%;
+    stroke-dasharray: 0 90%;
+  }
+}
+
+/* ========= 气泡背景 ========= */
+.bubbles {
+  position: absolute;
+  left: 40%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 50%;
+  z-index: 1;
+  
+
+}
+.bubble {
+  position: absolute;
+  bottom: -100px;
+  border-radius: 50%;
+  opacity: .6;
+  animation: rise 12s infinite ease-in;
+}
+@keyframes rise {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: .6;
+  }
+  100% {
+    transform: translateY(-120vh) scale(1.4);
+    opacity: 0;
+  }
+}
+
+/* ===== 响应式：≤100 em 隐藏所有相关元素 ===== */
+@media (max-width: 100em) {
+  .msg,
+  .text-copy,
+  .bubbles {
+    display: none;
+  }
+}

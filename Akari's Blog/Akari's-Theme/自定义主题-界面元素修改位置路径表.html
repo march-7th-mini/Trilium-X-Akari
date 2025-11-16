@@ -1,0 +1,498 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>自定义主题-界面元素修改位置路径表</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>自定义主题-界面元素修改位置路径表</h1>
+
+      <div class="ck-content">
+        <div class="content">
+          <div class="ck-content">
+             <h2>此主题中存在以下几个重复的样式配置项：</h2>
+
+            <ol>
+              <li>
+                <p style="margin-left:0px;"><strong>导航栏样式</strong> (<code>#navigationBar</code>)：</p>
+                <ul>
+                  <li>
+                    <p style="margin-left:0px;"><code>shmaur-navCss</code> 和 <code>Ankia-Theme.css</code> 都包含对导航栏样式的修改。</p>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p style="margin-left:0px;"><strong>主内容区域样式</strong> (<code>#main</code>)：</p>
+                <ul>
+                  <li>
+                    <p style="margin-left:0px;"><code>shmaur-mainCss</code> 和 <code>Ankia-Theme.css</code> 都包含对主内容区域样式的修改。</p>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p style="margin-left:0px;"><strong>页脚样式</strong> (<code>#footer</code>)：</p>
+                <ul>
+                  <li>
+                    <p style="margin-left:0px;"><code>shmaur-footerCss</code> 和 <code>Ankia-Theme.css</code> 都包含对页脚样式的修改。</p>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p style="margin-left:0px;"><strong>友链页面样式</strong> (<code>.fLink</code>)：</p>
+                <ul>
+                  <li>
+                    <p style="margin-left:0px;"><code>shmaur-linkCss</code> 和 <code>Ankia-Theme.css</code> 都包含对友链页面样式的修改。</p>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p style="margin-left:0px;"><strong>目录面板样式</strong> (<code>#toc-pane</code>)：</p>
+                <ul>
+                  <li>
+                    <p style="margin-left:0px;"><code>shmaur-mainCss</code> 和 <code>toc_item</code> 都包含对目录面板样式的修改。</p>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p style="margin-left:0px;"><strong>全局自定义样式</strong> (<code>:root</code>)：</p>
+                <ul>
+                  <li>
+                    <p style="margin-left:0px;"><code>shmaur-mainCss</code> 和 <code>Ankia-Theme.css</code> 都包含对全局变量的修改。</p>
+                  </li>
+                </ul>
+              </li>
+            </ol>
+            <hr>
+            <p style="margin-left:0px;"><strong>修改优先级：</strong><span style="color:hsl(180,75%,60%);"><strong>Ankia-Theme.css </strong></span><strong>→ 被 → </strong>
+
+              <span
+              style="color:hsl(120,75%,60%);"><strong>shmaur-*.css</strong>
+
+                </span><strong> → 被 → </strong><span style="color:hsl(0,75%,60%);"><strong>WhiteMinimalist-Theme.ejs末尾内联 &lt;style&gt;</strong></span><strong> 覆盖</strong>
+
+            </p>
+            <blockquote>
+              <p style="margin-left:0px;">对于样式的修改，优先级通常由CSS的层叠规则决定，即后来的样式会覆盖先前的样式。</p>
+            </blockquote>
+             <h2>WhiteMinimalist-Theme.ejs</h2>
+
+            <p>&lt;!-- 可修改的CSS样式总结 --&gt;
+              <br>&lt;!-- 1. 头部样式 --&gt;
+              <br>/* #navigationBar: 顶部导航栏的背景、字体颜色、高度等 */
+              <br>/* .logo img: Logo的大小、边距 */
+              <br>/* .navbar-links a: 导航链接的字体大小、颜色、悬停效果 */</p>
+            <p>&lt;!-- 2. 内容区域样式 --&gt;
+              <br>/* #main: 主内容区域的背景、内边距 */
+              <br>/* #title: 文章标题的字体大小、颜色、边距 */
+              <br>/* .blogMetadate: 文章元数据的字体大小、颜色 */
+              <br>/* .blogItems: 文章列表项的背景、边距、内边距 */</p>
+            <p>&lt;!-- 3. 卡片区域样式 --&gt;
+              <br>/* #bloggerInfoCard: 博主信息卡片的背景、边框、布局 */
+              <br>/* .bloggerInfoTitleStyle: 卡片标题的字体大小、颜色 */
+              <br>/* .bloggerInfoContentStyle: 卡片内容的字体大小、颜色 */</p>
+            <p>&lt;!-- 4. 目录面板样式（左侧） --&gt;
+              <br>/* #toc-pane: 目录面板的背景、宽度、位置 */
+              <br>/* .toc-pane-content-title: 目录标题的字体大小、颜色 */</p>
+            <p>&lt;!-- 5. 页脚样式 --&gt;
+              <br>/* #footer: 页脚的背景、字体颜色、布局 */</p>
+            <p>&lt;!-- 6. 其他样式 --&gt;
+              <br>/* .platformStyle svg: 社交媒体图标的大小、颜色、悬停效果 */
+              <br>/* .tagItem: 标签的背景、边框、字体大小 */</p>
+             <h2>toc_item</h2>
+
+            <p>&lt;!--&nbsp;
+              <br>&nbsp;================================
+              <br>&nbsp;右侧网页大纲导航，可自定义折叠箭头的大小和颜色
+              <br>&nbsp;================================
+              <br>--&gt;</p>
+             <h2>shmaur-js</h2>
+
+            <p>/*!&nbsp;
+              <br>* 可修改的CSS样式总结
+              <br>*&nbsp;
+              <br>* .toc-anchor: 目录锚点的样式，可修改字体颜色、大小、下划线等。
+              <br>* .video-el: 视频元素的样式，可调整宽度、高度、边框、圆角等。
+              <br>* .mathjax: 数学公式的样式，可修改字体、颜色、大小等。
+              <br>* #onGoTop: 回到顶部按钮的样式，可调整大小、形状、颜色、透明度、位置等。
+              <br>* #catalogue, #toc-pane-content-close, #left-menu-nav-close, #outline,
+              #outline-menu-nav: 目录相关按钮的样式，可修改背景颜色、字体颜色、边框、大小、圆角等。
+              <br>* .with-submenu: 子菜单按钮的样式，可修改背景颜色、字体颜色、边框、悬停效果等。
+              <br>* .active: 元素被激活时的样式，如背景颜色、字体颜色、边框等。
+              <br>* .showCatalogue: 目录显示的样式，可调整目录的宽度、高度、背景颜色、边框、滚动条样式等。
+              <br>* .navigationItemsStyle, .menuLinkStyle, .dropDownStyle: 导航菜单的样式，可修改导航项的布局、字体、颜色、悬停效果、下拉菜单的显示方式等。
+              <br>* #rewardImgContainer: 打赏图片容器的样式，可调整其大小、位置、显示方式、透明度等。
+              <br>* #toc: 目录的样式，可修改目录的宽度、高度、背景颜色、字体大小、边框、滚动条样式等。
+              <br>* .tocActive: 当前激活的目录项的样式，可突出显示，如改变背景颜色、字体颜色、边框等。
+              <br>* pre.line-numbers: 代码块的行号样式，可调整行号的字体、颜色、对齐方式等。
+              <br>* #searchContainer, #searchInput, #searchResults: 搜索相关的样式，可修改搜索框的大小、形状、颜色、搜索结果的布局、字体等。
+              <br>* .searchItems, .itemsTitle: 搜索结果项的样式，可调整字体、颜色、布局、悬停效果等。
+              <br>* #musicPlayer: 音乐播放器的样式，可调整其大小、位置、边框等。
+              <br>*/</p>
+             <h2>shmaur-homeCss</h2>
+
+            <p>/*!
+              <br>* WhiteMinimalist-Theme v1.1
+              <br>* https://www.shmaur.com/&nbsp;
+              <br>*shmaur-homeCss
+              <br>* Licensed Apache-2.0 © shmaur
+              <br>*&nbsp;
+              <br>* 可修改的CSS样式总结：
+              <br>*&nbsp;
+              <br>* .g-container: 修改容器的外边距、文本对齐方式、顺序等。
+              <br>* @media (max-width: 70em): 修改在屏幕宽度小于70em时的.g-container样式。
+              <br>* @media (max-width: 60em): 修改在屏幕宽度小于60em时的.g-container样式，如显示方式。
+              <br>* .g-container .title: 修改标题的样式，如位置、字体大小、权重、背景颜色、颜色、外边距、溢出方式等。
+              <br>* .g-container .title::before, .g-container .title::after: 修改标题伪元素的样式，如内容、位置、顶部偏移、左侧偏移、宽度、高度、圆角、变换效果、背景颜色、动画效果、层级、混合模式等。
+              <br>* .g-container .title::after: 修改标题另一个伪元素的圆角和动画延迟。
+              <br>* @keyframes rotate: 修改旋转动画的效果，如旋转角度。
+              <br>* .g-container .txt: 修改文本的样式，如位置、字体大小、颜色、内边距、字体系列、字母间距、文本转换、空白处理等。
+              <br>*/</p>
+             <h2>shmaur-navCss</h2>
+
+            <p>/*!
+              <br>* WhiteMinimalist-Theme v1.1
+              <br>* https://www.shmaur.com/&nbsp;
+              <br>*shmaur-navCss
+              <br>* Licensed Apache-2.0 © shmaur
+              <br>*&nbsp;
+              <br>* 可修改的CSS样式总结：
+              <br>*&nbsp;
+              <br>* #navigationBar: 修改导航栏的样式，如层级、显示方式、高度、阴影、对齐方式、背景颜色、模糊效果等。
+              <br>* @media (max-width: 70em): 修改在屏幕宽度小于70em时的#navigationBar的高度。
+              <br>* @media (min-width: 768px): 修改在屏幕宽度大于768px时的.navbar-container的内边距。
+              <br>* #siteTitle: 修改网站标题的样式，如显示方式、字体大小、行高、字体权重等。
+              <br>* @media (max-width: 70em): 修改在屏幕宽度小于70em时的#siteTitle的外边距。
+              <br>* #siteTitle .logo: 修改网站标题中logo的样式，如宽度、高度、圆角、溢出方式等。
+              <br>* #navigationItems: 修改导航项的样式，如显示方式、高度、对齐方式、空白处理、边框等。
+              <br>* @media (max-width: 70em): 修改在屏幕宽度小于70em时的#navigationItems的宽度、位置、溢出方式等。
+              <br>* @media (min-width: 768px): 修改在屏幕宽度大于768px时的.navbar-links的外边距。
+              <br>* .navbar-links: 修改导航链接的样式，如对齐方式。
+              <br>* @media (min-width: 768px): 修改在屏幕宽度大于768px时的.navbar-links的显示方式。
+              <br>* @media (max-width: 70em): 修改在屏幕宽度小于70em时的#navigationItems .navbar-links的显示方式。
+              <br>* .navbar-links .navbar-links__item: 修改导航链接项的样式，如显示方式、填充等。
+              <br>* .navbar-links .navbar-links__item:not(:first-child): 修改非第一个导航链接项的外边距。
+              <br>* @media (min-width: 768px): 修改在屏幕宽度大于768px时的.navbar-links .navbar-links__item:not(:first-child)的外边距。
+              <br>* .navbar-links .navbar-links__item&gt;.link: 修改导航链接的样式，如显示方式、对齐方式、字体大小、行高、字体权重等。
+              <br>* .navbar-links .navbar-links__item&gt;.link .xicon-container: 修改导航链接中图标容器的外边距。
+              <br>* .navbar-links .navbar-links__item .router-link-active: 修改激活的导航链接的颜色。
+              <br>* .navbar-links__item&gt;a, .navbar-links__item .dropdown-link__title:
+              修改导航链接和下拉链接标题的高度。
+              <br>* .dropDownStyle: 修改下拉菜单的背景颜色。
+              <br>* .dropDownStyle&gt;a: 修改下拉菜单中链接的最大宽度、溢出方式、空白处理、文本溢出、字体大小、填充等。
+              <br>* .menuLinkStyle: 修改菜单链接的字体大小、宽度、填充、光标等。
+              <br>* .navbar-links-mobile: 修改移动端导航栏的样式，如外边距、位置、显示方式、背景颜色、内边距、层级等。
+              <br>* .submenu: 修改子菜单的样式，如显示方式、过渡效果等。
+              <br>* .submenu.active: 修改激活的子菜单的宽度、显示方式、布局方式、字体大小、背景颜色等。
+              <br>* .submenu a: 修改子菜单中链接的宽度、填充、左侧填充等。
+              <br>* .navbar-links-mobile.active: 修改激活的移动端导航栏的显示方式、溢出方式等。
+              <br>* .with-submenu.active svg: 修改激活的带有子菜单的SVG图标的旋转角度。
+              <br>* .navbar-links__item .link svg: 修改导航链接中SVG图标的过渡效果。
+              <br>* .navigationItemsStyle-mobile: 修改移动端导航项的样式，如显示方式、对齐方式、布局方式、外边距、宽度、背景颜色等。
+              <br>* #toggleMenuButton: 修改菜单按钮的样式，如边框、背景颜色、层级、宽度、高度、显示方式、颜色、光标、位置等。
+              <br>* #toggleMenuButton .feather-menu line: 修改菜单按钮中线条的过渡效果。
+              <br>* #toggleMenuButton.active .feather-menu line:first-child: 修改激活的菜单按钮中第一个线条的透明度和变换效果。
+              <br>* #toggleMenuButton.active .feather-menu line:nth-child(2): 修改激活的菜单按钮中第二个线条的变换效果。
+              <br>* #toggleMenuButton.active .feather-menu line:last-child: 修改激活的菜单按钮中最后一个线条的变换效果。
+              <br>* #searchButton-mobile: 修改移动端搜索按钮的显示方式。
+              <br>* .left-menu-nav: 修改左侧导航的样式，如动画效果、位置、宽度、高度、溢出方式、显示方式、透明度等。
+              <br>* .left-menu-nav:hover: 修改左侧导航鼠标悬停时的透明度。
+              <br>* .left-menu-nav ul: 修改左侧导航中列表的样式，如左侧填充、颜色、字体大小、显示方式等。
+              <br>* .left-menu-nav ul &gt; li: 修改左侧导航中列表项的样式，如列表样式类型。
+              <br>* .left-menu-nav ul &gt; li ul &gt; li ul: 修改左侧导航中嵌套列表项的左侧填充。
+              <br>* .menulist: 修改菜单列表的填充。
+              <br>* .menu-tree-root: 修改菜单树根的左侧填充、高度、溢出方式等。
+              <br>* .node-title: 修改树节点标题的样式，如光标、显示方式、填充、圆角、颜色、字体权重、空白处理、溢出方式、文本溢出等。
+              <br>* .node-title.selected, .leaf-title.selected: 修改选中的树节点标题和树叶节点的字体颜色、字体权重、左侧填充等。
+              <br>* .node-title:hover: 修改树节点标题鼠标悬停时的背景颜色。
+              <br>* .leaf-title: 修改树叶节点的样式，如光标、显示方式、填充、颜色、空白处理、溢出方式、文本溢出等。
+              <br>* .leaf-title:hover: 修改树叶节点鼠标悬停时的背景颜色。
+              <br>* .menu-hidden: 修改隐藏的菜单的显示方式。
+              <br>* @media (min-width: 768px): 修改在屏幕宽度大于768px时的.navbar-links .navbar-links__item的显示方式和右侧填充。
+              <br>* @media (max-width: 70em): 修改在屏幕宽度小于70em时的.left-menu-nav的显示方式。
+              <br>* @media (min-width: 1340px): 修改在屏幕宽度大于1340px时的.left-menu-nav的显示方式。
+              <br>*/</p>
+             <h2>shmaur-mainCss</h2>
+
+            <p>/*!
+              <br>* WhiteMinimalist-Theme v1.1
+              <br>* https://www.shmaur.com/&nbsp;
+              <br>*shmaur-mainCss
+              <br>* Licensed Apache-2.0 © shmaur
+              <br>*&nbsp;
+              <br>* 可修改的CSS样式总结：
+              <br>*&nbsp;
+              <br>* body: 修改页面整体的字体、颜色等。
+              <br>* :root: 修改全局变量，如阴影、颜色等。
+              <br>* h2:hover &gt; a, h3:hover &gt; a, h4:hover &gt; a, h5:hover &gt; a,
+              h7:hover &gt; a, h8:hover &gt; a, h9:hover &gt; a, h10:hover &gt; a: 修改标题鼠标悬停时的透明度。
+              <br>* #main: 修改主内容区域的宽度、背景颜色、最大宽度等。
+              <br>* @media (max-width: 70em): 修改在屏幕宽度小于70em时的#main的外边距、内边距、宽度等。
+              <br>* pre, code: 修改代码的字体、空白处理方式等。
+              <br>* .code-toolbar: 修改代码工具栏的位置。
+              <br>* .code-toolbar::before: 修改代码工具栏伪元素的内容、显示方式、宽度、高度、背景颜色、圆角、位置、层级、阴影等。
+              <br>* pre[class*=language-]: 修改代码块的背景颜色、文字颜色、圆角、填充、字体、阴影、位置等。
+              <br>* pre[class*=language-]:hover: 修改代码块鼠标悬停时的阴影。
+              <br>* pre[class*=language-].line-numbers: 修改代码块行号的行高。
+              <br>* #content: 修改内容的外边距。
+              <br>* .blogMetadate: 修改博客元数据的对齐方式、外边距等。
+              <br>* .blogMetadate a: 修改博客元数据链接的颜色。
+              <br>* .blogMetadateItems: 修改博客元数据项的外边距。
+              <br>* .blogItems: 修改博客项目的外边距、内边距、阴影、宽度、对齐方式、背景颜色、圆角、颜色、边框、过渡效果等。
+              <br>* .blogItems:hover: 修改博客项目鼠标悬停时的变换效果。
+              <br>* .blogItems .blogItemsMainContain: 修改博客项目主体容器的填充、宽度等。
+              <br>* .toc-anchor: 修改目录锚点的外边距、透明度、过渡效果等。
+              <br>* .toc-anchor::before: 修改目录锚点伪元素的内容。
+              <br>* .video-el: 修改视频元素的宽度。
+              <br>* #toc-pane: 修改目录面板的顺序、方向、位置、宽度、最大宽度、高度、透明度、顶部偏移、动画效果、内边距、外边距、边框等。
+              <br>* .toc_title: 修改目录标题的显示方式。
+              <br>* .toc_title .arrow: 修改目录标题中箭头的样式，如光标、宽度、高度、外边距、行高、对齐方式等。
+              <br>* ul li.active &gt; ul: 修改激活的列表项的子列表的显示方式。
+              <br>* .arrow.expanded svg: 修改展开的箭头的旋转角度和过渡效果。
+              <br>* ul li &gt; a: 修改链接的光标和文本装饰。
+              <br>* ul li &gt; a:hover: 修改链接鼠标悬停时的文本装饰。
+              <br>* #toc-pane-content-close, #left-menu-nav-close: 修改目录面板关闭按钮的显示方式。
+              <br>* @keyframes slide-down: 修改下滑动画的效果。
+              <br>* #toc-pane li: 修改目录列表项的宽度和顶部填充。
+              <br>* #toc a: 修改目录链接的颜色、宽度、显示方式、字体大小、填充等。
+              <br>* #toc: 修改目录的显示方式、溢出方式、高度等。
+              <br>* #catalogue, #outline: 修改目录按钮的位置、高度、宽度、显示方式、对齐方式、背景颜色、圆角、内边距、过渡效果、光标、层级等。
+              <br>* #outline: 修改目录按钮的位置。
+              <br>* @media (max-width: 70em): 修改在屏幕宽度小于70em时的#catalogue和#outline的位置。
+              <br>* .showCatalogue: 修改显示目录的样式，如显示方式、动画效果等。
+              <br>* @keyframes fromRightToRightAppearing: 修改从右到右出现的动画效果。
+              <br>* #title: 修改文章标题的外边距、字体大小、对齐方式、填充等。
+              <br>* #contentHeader: 修改内容头部的位置、高度、显示方式、外边距、布局方式等。
+              <br>* .blogContent: 修改博客内容的显示方式和对齐方式。
+              <br>* #blogItemSummaryImgContain: 修改博客项目摘要图片容器的圆角、内边距、边框、外边距、宽度、高度、浮动方向、显示方式、对齐方式、溢出方式等。
+              <br>* .softlist: 修改软件列表的方向和布局方式。
+              <br>* .soft: 修改软件的样式，如颜色、宽度、高度、外边距等。
+              <br>* .soft .blogItemsMainContain .type-text .blogContent #blogItemSummaryImgContain:
+              修改软件中博客项目摘要图片容器的宽度、高度、圆角、外边距、顶部外边距等。
+              <br>* .soft .blogItemsMainContain .type-text #blogItemTitle: 修改软件中博客项目标题的显示方式、行高、文本溢出等。
+              <br>* #blogItemSummary: 修改博客项目摘要的显示方式、行高、文本溢出等。
+              <br>* #copyright: 修改版权信息的字体大小和颜色。
+              <br>* #copyright P: 修改版权信息段落的外边距。
+              <br>* .role-file: 修改文件角色的样式，如填充、背景颜色、颜色、圆角等。
+              <br>* .role-file::before: 修改文件角色伪元素的内容和外边距。
+              <br>* .role-file:hover: 修改文件角色鼠标悬停时的背景颜色和颜色。
+              <br>* #onGoTop: 修改回到顶部按钮的位置、显示方式、宽度、高度、背景颜色、圆角、内边距、透明度、过渡效果、光标、层级、对齐方式等。
+              <br>* @media (max-width: 70em): 修改在屏幕宽度小于70em时的#onGoTop的位置。
+              <br>* #onGoTop:hover: 修改回到顶部按钮鼠标悬停时的背景颜色和变换效果。
+              <br>* #otherPlatformBar: 修改其他平台栏的外边距和边框。
+              <br>* .categoryBadge: 修改分类徽章的外边距和右侧填充。
+              <br>* .caregoryCard: 修改分类卡片的文本对齐方式。
+              <br>* .cardheight: 修改卡片高度的最大高度、溢出方式、溢出方向等。
+              <br>* #articleCount: 修改文章计数的外边距。
+              <br>* .tag .tagItem: 修改标签项的阴影、字体大小、填充、颜色、字体权重等。
+              <br>* .caregoryCard .feather-tag: 修改分类卡片中标签的顶部外边距和右侧外边距。
+              <br>* .image: 修改图片的光标样式。
+              <br>* .searchContainerStyle: 修改搜索容器的位置、显示方式、对齐方式、背景颜色、圆角、方向、宽度、光标、阴影、内边距、层级、最大高度、溢出方式、动画效果等。
+              <br>* #searchInput: 修改搜索输入框的边框、底部边框、填充、宽度、轮廓、高度、字体大小等。
+              <br>* #searchResults: 修改搜索结果的高度、溢出方式、溢出方向等。
+              <br>* .searchItems: 修改搜索结果项的颜色和字体权重。
+              <br>* .searchItems:hover: 修改搜索结果项鼠标悬停时的颜色。
+              <br>* .itemsTitle: 修改项目标题的外边距、左侧填充、边框、高度、行高等。
+              <br>* #announcement: 修改公告的背景颜色。
+              <br>* .cardContainerStyle: 修改卡片容器的位置、顺序、顶部偏移、宽度、高度、显示方式、方向、背景颜色、光标、外边距等。
+              <br>* #rewardBtn: 修改打赏按钮的填充、字体大小、背景颜色、颜色、边框、光标、圆角、阴影等。
+              <br>* .coffee: 修改咖啡颜色。
+              <br>* .navbar-links-mobile: 修改移动端导航链接的显示方式。
+              <br>* @media (max-width: 70em): 修改在屏幕宽度小于70em时的样式，如标题对齐方式、内容头部样式、博客项目宽度、回到顶部按钮位置、平台样式外边距、卡片容器样式、博主信息标题样式、博主信息卡片样式、导航栏样式、菜单卡片动画、博主信息卡片动画、导航栏菜单按钮样式、导航栏搜索按钮样式、内容字体大小、主内容区域样式、导航栏菜单按钮样式、导航栏底部样式、代码图片最大宽度、布局样式、目录面板样式、目录面板内容样式、目录面板关闭按钮样式、目录和目录菜单导航样式、搜索容器样式、电影标题和观看日期样式、网站标题链接样式、表格样式、滚动条样式、下拉菜单样式等。
+              <br>*/</p>
+             <h2>shmaur-footerCss</h2>
+
+            <p>/*!
+              <br>* WhiteMinimalist-Theme v1.1
+              <br>* https://www.shmaur.com/&nbsp;
+              <br>*shmaur-footerCss
+              <br>* Licensed Apache-2.0 © shmaur
+              <br>*&nbsp;
+              <br>* 可修改的CSS样式总结：
+              <br>*&nbsp;
+              <br>* #footer: 修改页脚的高度、宽度、边框透明度、顶部填充、底部填充、文本对齐方式、字体权重、字体大小等。
+              <br>* .xicon-container.left: 修改左侧图标容器的方向、对齐方式等。
+              <br>* .xicon-container: 修改图标容器的显示方式、光标样式等。
+              <br>* svg: 修改SVG图标的显示方式。
+              <br>* .xicon-container.left&gt;svg: 修改左侧图标容器中SVG图标的右侧外边距。
+              <br>*/</p>
+             <h2>shmaur-messages</h2>
+
+            <p>/*!
+              <br>* WhiteMinimalist-Theme v1.1
+              <br>* https://www.shmaur.com/&nbsp;
+              <br>*shmaur-messages
+              <br>* Licensed Apache-2.0 © shmaur
+              <br>*&nbsp;
+              <br>* 可修改的CSS样式总结：
+              <br>*&nbsp;
+              <br>* .msg: 修改消息框的背景颜色、背景尺寸、字体、高度等。
+              <br>* @media (max-width: 60em): 修改在屏幕宽度小于60em时的消息框的高度。
+              <br>* .text--line: 修改文本行的字体大小。
+              <br>* .msg svg: 修改消息框中SVG图标的绝对位置。
+              <br>* .text-copy: 修改文本副本的填充、边框颜色、边框虚线数组、边框宽度、动画效果等。
+              <br>* .text-copy:nth-child(1): 修改第一个文本副本的边框颜色和边框虚线偏移量。
+              <br>* .text-copy:nth-child(2): 修改第二个文本副本的边框颜色和边框虚线偏移量。
+              <br>* .text-copy:nth-child(3): 修改第三个文本副本的边框颜色和边框虚线偏移量。
+              <br>* .text-copy:nth-child(4): 修改第四个文本副本的边框颜色和边框虚线偏移量。
+              <br>* .text-copy:nth-child(5): 修改第五个文本副本的边框颜色和边框虚线偏移量。
+              <br>* @-webkit-keyframes stroke-offset: 修改Safari和Chrome浏览器中边框偏移动画的效果。
+              <br>* @keyframes stroke-offset: 修改其他浏览器中边框偏移动画的效果。
+              <br>*/</p>
+             <h2>shmaur-linkCss</h2>
+
+            <p>/*!
+              <br>* WhiteMinimalist-Theme v1.1
+              <br>* https://www.shmaur.com/&nbsp;
+              <br>*shmaur-linkCss
+              <br>* Licensed Apache-2.0 © shmaur
+              <br>*&nbsp;
+              <br>* 可修改的CSS样式总结：
+              <br>*&nbsp;
+              <br>* .fLink:hover: 修改友链鼠标悬停时的变换效果。
+              <br>* .fLinkContainer: 修改友链容器的显示方式、换行方式、对齐方式等。
+              <br>* .fLinkContainer .cf-friends-link: 修改友链链接的显示方式、边框、内边距、圆角、宽度、方向、最大高度、最小高度、外边距、对齐方式、过渡效果等。
+              <br>* .fLinkContainer .cf-friends-link .cf-friends-avatar: 修改友链头像的圆角、右侧外边距、底部外边距等。
+              <br>* #fLinkTitle: 修改友链标题的颜色。
+              <br>* #fLinkDes: 修改友链描述的字体大小、颜色、显示方式、行高、文本溢出等。
+              <br>*/</p>
+            <p>&nbsp;</p>
+             <h2>Ankia-Theme.css</h2>
+
+            <p>/*!&nbsp;
+              <br>* Ankia-Theme v1.7
+              <br>* https://ankia.top/&nbsp;
+              <br>*Ankia-Theme.css
+              <br>* Licensed Apache-2.0 © 东东
+              <br>*&nbsp;
+              <br>* 可修改的CSS样式总结：
+              <br>*&nbsp;
+              <br>* body: 修改页面整体的字体、字号、外边距、高度等。
+              <br>* :root: 修改全局变量，如阴影样式、颜色等。
+              <br>* #layout: 修改页面布局的宽度、高度、对齐方式等。
+              <br>* #childLinks.grid ul: 修改子链接网格布局的样式，如列表样式、显示方式、填充等。
+              <br>* #childLinks.grid ul li: 修改子链接网格布局中每个项目的宽度、高度、填充等。
+              <br>* #childLinks.grid ul li a: 修改子链接的样式，如显示方式、边框、圆角、字体大小等。
+              <br>* .blogPostTopStyle: 修改博客顶部的样式，如颜色、外边距等。
+              <br>* #childLinks.grid ul li a:hover: 修改子链接鼠标悬停时的背景颜色。
+              <br>* #childLinks.list ul: 修改子链接列表布局的样式，如显示方式、填充、外边距等。
+              <br>* #childLinks.list ul li: 修改子链接列表布局中每个项目的外边距。
+              <br>* #parentLink: 修改父链接的样式，如浮动方向、外边距等。
+              <br>* #noteClippedFrom: 修改剪辑来源的样式，如内边距、外边距、颜色、边框等。
+              <br>* #toggleMenuButton::after: 修改菜单按钮的伪元素样式，如位置、偏移等。
+              <br>* #navigationBar: 修改导航栏的样式，如位置、宽度、背景颜色、阴影等。
+              <br>* #navigationBar a: 修改导航栏链接的样式，如光标样式。
+              <br>* #navigationItems: 修改导航项的样式，如文本阴影、位置、显示方式等。
+              <br>* .menuLinkStyle: 修改菜单链接的样式，如颜色。
+              <br>* .navigationItemsStyle: 修改导航项的样式，如外边距、显示方式、对齐方式等。
+              <br>* .navigationItemsStyle svg: 修改导航项中SVG图标的过渡效果。
+              <br>* .unfolding: 修改SVG图标展开时的旋转角度。
+              <br>* .menuLinkStyle:hover: 修改菜单链接鼠标悬停时的颜色。
+              <br>* .dropDownStyle: 修改下拉菜单的样式，如位置、显示方式、背景颜色、圆角、阴影等。
+              <br>* .dropDownStyle &gt; a: 修改下拉菜单中链接的填充样式。
+              <br>* #siteTitle: 修改网站标题的样式，如位置、外边距、显示方式等。
+              <br>* #siteTitle a: 修改网站标题链接的样式，如外边距、颜色、字体权重、字号等。
+              <br>* #siteTitle &gt; img: 修改网站标题中图片的样式，如最大宽度、宽度等。
+              <br>* .hide: 修改隐藏元素的样式，如变换效果。
+              <br>* .showMenu: 修改菜单显示的样式，如显示方式、对齐方式、动画效果等。
+              <br>* #content li: 修改内容中列表项的外边距。
+              <br>* a: 修改链接的样式，如颜色、文本装饰等。
+              <br>* #content a:hover: 修改内容中链接鼠标悬停时的颜色、背景颜色、圆角等。
+              <br>* #toc-pane li::marker: 修改目录列表标记的样式。
+              <br>* #content img: 修改内容中图片的样式，如最大宽度、高度、显示方式、外边距、圆角等。
+              <br>* img: 修改图片的样式，如宽度。
+              <br>* .image_resized: 修改调整大小的图片的样式，如宽度。
+              <br>* figcaption: 修改图片说明的样式，如显示方式、对齐方式、字体大小、颜色等。
+              <br>* hr: 修改水平分隔线的样式，如高度、边框颜色等。
+              <br>* code.language-text-plain: 修改纯文本代码的背景颜色。
+              <br>* #metadateContent: 修改元数据内容的样式，如高度。
+              <br>* .table: 修改表格的样式，如显示方式、宽度、外边距等。
+              <br>* .table table: 修改表格内部的样式，如字体大小、边框宽度、颜色、边框折叠方式等。
+              <br>* .table th: 修改表格表头的样式，如边框颜色、宽度、填充、样式、背景颜色等。
+              <br>* .table td: 修改表格单元格的样式，如边框颜色、宽度、填充、样式、背景颜色等。
+              <br>* h2:before, h3:before, h4:before, h5:before: 修改标题前的样式，如内容、颜色等。
+              <br>* @keyframes slideIn: 修改滑入动画的效果。
+              <br>* #main: 修改主内容区域的样式，如宽度、位置、增长方式、圆角、外边距、内边距、背景颜色、动画效果、背景图片等。
+              <br>* nav.grid: 修改网格导航的样式，如显示方式、方向、宽度、对齐方式等。
+              <br>* .blogItemsMainContain: 修改博客项目主体容器的样式，如颜色、宽度、内边距、圆角、字体权重、显示方式、方向、位置、对齐方式、溢出方式等。
+              <br>* #blogItems: 修改博客项目的样式，如显示方式、对齐方式、高度、宽度、外边距、背景颜色、圆角、阴影、过渡效果、颜色、文本装饰等。
+              <br>* #blogItems:hover: 修改博客项目鼠标悬停时的变换效果。
+              <br>* .blogMetadate: 修改博客元数据的样式，如外边距、字体大小、权重、显示方式、方向、对齐方式、游标、溢出方式、颜色等。
+              <br>* .blogMetadateItems: 修改博客元数据项的样式，如外边距、显示方式、方向、对齐方式等。
+              <br>* .categoryBadge: 修改分类徽章的样式，如填充、圆角等。
+              <br>* .shakeStyle:hover: 修改鼠标悬停时的抖动效果。
+              <br>* #blogItemSummaryImgContain: 修改博客项目摘要图片容器的样式，如圆角、内边距、边框、外边距、宽度、高度、浮动方向、对齐方式、溢出方式等。
+              <br>* .ck-content code: 修改内容代码的样式，如背景颜色、圆角、字体大小、填充等。
+              <br>* .ck-content pre code: 修改预格式化代码的样式，如背景颜色、空白处理、填充等。
+              <br>* blockquote: 修改块引用的样式，如颜色、边框颜色、背景颜色、填充、外边距、圆角等。
+              <br>* .text-tiny, .text-small, .text-big, .text-huge: 修改不同大小文本的字体大小。
+              <br>* .image: 修改图片的样式，如高度、圆角、外边距等。
+              <br>* iframe.pdf-view: 修改PDF查看器的样式，如宽度、高度。
+              <br>* .ck-content pre: 修改内容预格式化文本的背景颜色。
+              <br>* .tocActive: 修改激活的目录项的颜色。
+              <br>* @keyframes fromRightToLeftAppearing, @keyframes fromLeftToRightAppearing:
+              修改从右到左和从左到右出现的动画效果。
+              <br>* #toc ul: 修改目录列表的内边距。
+              <br>* #toc a: 修改目录链接的样式，如颜色、字体权重、文本装饰等。
+              <br>* #toc li :hover: 修改目录列表项鼠标悬停时的颜色。
+              <br>* .fLinkContainer: 修改友链容器的样式，如显示方式、换行方式、对齐方式等。
+              <br>* .fLink: 修改友链的样式，如宽度、边框、圆角、填充、外边距、盒模型、显示方式、方向、对齐方式、最大高度、最小高度、过渡效果等。
+              <br>* .fLink:hover: 修改友链鼠标悬停时的变换效果。
+              <br>* .fLink img: 修改友链图片的样式，如宽度、高度、圆角、外边距等。
+              <br>* .fLink &gt; #fLinkTitle: 修改友链标题的样式，如字体大小、字体权重、外边距等。
+              <br>* .fLink &gt; #fLinkDes: 修改友链描述的样式，如字体大小、颜色等。
+              <br>* #rewardContainer: 修改打赏容器的样式，如显示方式、方向、对齐方式、外边距等。
+              <br>* #rewardBtn: 修改打赏按钮的样式，如填充、字体大小、背景颜色、颜色、边框、光标、圆角、阴影等。
+              <br>* #rewardBtn:hover: 修改打赏按钮鼠标悬停时的阴影、变换效果、背景颜色等。
+              <br>* #rewardImgContainer: 修改打赏图片容器的样式，如显示方式、外边距、透明度、过渡效果等。
+              <br>* .rewardImg: 修改打赏图片的样式，如宽度、外边距、边框、圆角、填充等。
+              <br>* .wechatPay, .aliPay: 修改微信支付和支付宝的样式，如文本对齐方式、字体大小、颜色等。
+              <br>* #footer: 修改页脚的样式，如文本对齐方式、字体大小、颜色、外边距、位置、高度、宽度等。
+              <br>* .cardContainerStyle: 修改卡片容器的样式，如位置、顺序、顶部偏移、宽度、高度、显示方式、方向、背景颜色、光标等。
+              <br>* .bloggerInfoTitleStyle: 修改博主信息标题的样式，如字体权重、</p>
+            <p>&nbsp;</p>
+             <h2>css-doodle.min.js</h2>
+
+            <p>这段代码是一个非常复杂的 CSS 和 JavaScript 库，用于创建和管理 CSS 动画和图形。它包含了大量的功能和组件，用于生成和操作
+              CSS 样式、动画、网格布局等。以下是对代码中一些关键部分的简要总结：</p>
+             <h3 style="margin-left:0px;"><strong>主要功能</strong></h3>
+
+            <ul>
+              <li>
+                <p style="margin-left:0px;"><strong>CSS 动画和样式生成</strong>：通过解析和处理 CSS 规则，生成动态的 CSS 样式和动画。</p>
+              </li>
+              <li>
+                <p style="margin-left:0px;"><strong>WebGL 着色器支持</strong>：支持 WebGL 着色器的创建和渲染，用于更复杂的图形效果。</p>
+              </li>
+              <li>
+                <p style="margin-left:0px;"><strong>网格布局</strong>：支持动态生成和管理网格布局，包括单元格的创建和样式应用。</p>
+              </li>
+              <li>
+                <p style="margin-left:0px;"><strong>自定义元素</strong>：通过自定义元素类 <code>Fn</code>，可以方便地在 HTML 中使用这些功能。</p>
+              </li>
+            </ul>
+             <h3 style="margin-left:0px;"><strong>使用方法</strong></h3>
+
+            <ul>
+              <li>
+                <p style="margin-left:0px;"><strong>HTML 中使用</strong>：通过定义一个自定义元素 <code>&lt;css-doodle&gt;</code>，可以将
+                  CSS 动画和图形嵌入到 HTML 页面中。</p>
+              </li>
+              <li>
+                <p style="margin-left:0px;"><strong>JavaScript 调用</strong>：通过 <code>Fn</code> 类的方法，可以动态地更新和控制 CSS 动画和图形。</p>
+              </li>
+            </ul>
+            <p style="margin-left:0px;">这段代码是一个功能强大的工具，适用于需要动态生成和管理 CSS 动画和图形的项目。</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>

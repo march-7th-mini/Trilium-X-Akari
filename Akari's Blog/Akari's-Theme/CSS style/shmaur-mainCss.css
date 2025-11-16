@@ -1,0 +1,945 @@
+/*!
+ * WhiteMinimalist-Theme v1.1
+ * https://www.shmaur.com/
+ * shmaur-mainCss
+ * Licensed Apache-2.0 © shmaur
+ * 涉及页面元素和右侧大纲目录及手机端的布局等，增加注释加小修改Akari_404
+ * Akari's Blog:  https://www.aiphm.cn/share/index.html
+ */
+
+/* 基础字体和颜色设置，覆盖掉ejs中霞鹜文楷字体 */
+body {
+    font-family: lucida grande, lucida sans unicode, lucida, helvetica, Hiragino Sans GB, Microsoft YaHei, WenQuanYi Micro Hei, sans-serif;
+    color:#323232;
+}
+
+/* CSS变量定义 - 用于主题色彩和阴影 */
+:root {
+    --shadow: 0px 24px 32px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+    --blue: #4961ff;
+    --blue-strong: #4961ff;
+    --gray: gray;
+    --ck-color-table-caption-text: gray;
+    --metadateColor: #777777
+}
+
+/* 标题锚点悬停效果 - 鼠标悬停时显示锚点链接 */
+h2:hover > a,
+h3:hover > a,
+h4:hover > a,
+h5:hover > a,
+h7:hover > a,
+h8:hover > a,
+h9:hover > a,
+h10:hover > a {
+    opacity: 1; /* 鼠标悬停时透明度为1 */
+}
+
+
+
+/* 主内容区域样式 */
+#main {
+    width: calc(100vw - 1200px);
+    background: #FFFFFF;
+    max-width: 2048px;
+}
+
+/* 响应式设计：中等屏幕尺寸适配 */
+@media (max-width: 80em) {
+    #main {
+        margin: 0 !important; /* 覆盖默认margin */
+        padding: 90px 30px 30px 30px !important; /* 覆盖默认padding */
+        width: 80% !important; /* 覆盖默认宽度 */
+    }
+}
+
+
+
+/* 代码块字体设置 */
+pre,
+code {
+  font-family: LXGWWenKaiMono monospace;
+  white-space: pre-wrap;
+}
+
+/* 代码工具栏样式 - 模拟macOS窗口按钮 */
+.code-toolbar{
+position: relative;
+}
+.code-toolbar::before{
+content: "";
+    display: block;
+    width: 12px;
+    height: 12px;
+    background-color: #ff5f57; /* 关闭按钮 */
+    border-radius: 50%;
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    z-index: 1;
+    box-shadow: 20px 0 0 #ffbd2e, 40px 0 0 #28ca42; /* 最小化和最大化按钮 */
+}
+
+/* 代码块基础样式 - macOS终端风格 */
+pre[class*=language-]{
+    background: #1e1e1e; /* 背景颜色与 macOS 终端相似 */
+    color: #ffffff; /* 文字颜色 */
+    border-radius: 8px; /* 圆角边框 */
+    padding-top:40px;
+    font-family: "Menlo", "Monaco", "Consolas", "Courier New", monospace; /* macOS 终端使用的字体 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+/* 代码块悬停效果 */
+pre[class*=language-]:hover{
+    box-shadow:0 25px 15px rgba(0,0，0,0.2); /* 悬停时阴影增强 */
+}
+
+/* 带行号的代码块行高调整 */
+pre[class*=language-].line-numbers{
+line-height: 1;
+}
+
+
+
+/* 主内容区域底部间距 */
+#content {
+    /*margin-bottom: 66px;*/
+}
+
+
+
+/* 博客元数据样式 */
+.blogMetadate {
+    justify-content: flex-start;
+    margin-top: 0.5rem;
+}
+
+.blogMetadate a {
+    color: var(--metadateColor) !important; /* 使用CSS变量定义的颜色 */
+}
+
+.blogMetadateItems {
+    margin-left: 0;
+}
+
+
+/* 目录锚点样式 */
+.toc-anchor {
+  margin-left: 0.4em;
+    opacity: 0; /* 默认透明度为0 */
+    transition: opacity 0.5s ease-in-out; /* 设置过渡效果 */
+}
+
+.toc-anchor::before{
+    content: "🔗";   /* 锚点前缀符号 */
+}
+
+
+
+/* 视频元素响应式宽度 */
+.video-el{
+width:100%;
+}
+
+
+
+/* PC端右侧页面大纲，文章目录侧边栏样式 */
+#toc-pane {
+    order: 3;
+    z-index: 1;
+    flex-direction: column;
+    position: fixed;
+    right: 0;
+    width: 18vw; /* 动态宽度 */
+    max-width: 400px; /* 最大宽度限制 */
+    height: 100%;
+    opacity: 1;
+    top: 90px;
+    animation: fromLeftToRightAppearing 0.5s ease-in-out;
+    padding-left: 15px;
+    margin-right: 5px;
+    border:none;
+}
+
+/* 右侧页面大纲，目录标题样式 */
+.toc_title{
+display: flex;
+}
+
+.toc_title .arrow {
+    cursor: pointer;
+    width: 24px;
+    height: 32px;
+    margin-top: 0;
+    line-height: 32px;
+    text-align: center;
+}
+
+/* 激活状态的目录项显示子菜单 */
+ul li.active > ul {
+  display: block;
+}
+
+/* 右侧页面大纲，目录展开箭头旋转效果 */
+.arrow.expanded svg {
+    transform: rotate(-90deg);
+    transition: transform 0.3s;
+}
+
+/* 右侧页面大纲，目录链接样式 */
+ul li > a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+ul li > a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+/* 移动端目录关闭按钮默认隐藏 */
+#toc-pane-content-close,#left-menu-nav-close{
+        display:none;
+    }
+
+/* 下拉动画定义 */
+@keyframes slide-down {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+/* 目录列表项样式 */
+#toc-pane li {
+    width:100%;
+    padding-top: 3px;
+}
+
+/* 目录链接样式 */
+#toc a {
+    color: #000000;
+    width: 100%;
+    display: block;
+    font-size: 15px;
+    padding: 5px;
+}
+
+/* 目录容器滚动设置 */
+#toc{
+    display: block;
+    overflow-y: auto;
+    overflow: hidden;
+     padding: 0;
+    overflow-y: auto;
+     height: calc(100vh - 150px); /* 动态高度计算 */
+ }
+
+/* 移动端目录和大纲按钮样式 - 默认隐藏 */
+#catalogue,#outline {
+    position: fixed;
+    bottom: 85px;
+    right: 19vw;
+    height: 30px;
+    width: 30px;
+    display: none;
+    text-align: center;
+    background: #37363661;
+    border-radius: 50%;
+    padding: 3px;
+    transition: 0.5s ease;
+    cursor: pointer;
+    z-index: 2;
+    align-items: center;
+}
+#outline{
+    bottom:140px /* 大纲按钮位置调整 */
+}
+
+/* 中等屏幕尺寸按钮位置调整 */
+@media (max-width: 80em) {
+    #catalogue,#outline {
+        right: 8vw; /* 覆盖默认右侧位置 */
+    }
+}
+
+/* 显示目录的类 - 用于JS控制显示 */
+.showCatalogue {
+    display: block !important; /* 覆盖display:none */
+    animation: fromRightToRightAppearing 0.5s ease-in-out;
+}
+
+/* 目录显示动画 */
+@keyframes fromRightToRightAppearing {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+
+
+
+/* 文章页面样式 */
+/* 文章标题样式 */
+#title {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 150%;
+    text-align: center !important;
+    padding-left: 0 !important;
+}
+
+/* 文章头部容器 */
+#contentHeader {
+    position: relative;
+    height: 2.5rem;
+    display: flex;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+
+/* 博客文章列表卡片项样式 */
+.blogItems {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    box-shadow: none;
+    /*width: 100%;*/
+    justify-content: flex-start;
+    --tw-bg-opacity: 0.5;
+    background-color: #9e9e9e17;
+    border-radius: .5rem;
+    --tw-text-opacity: 1;
+    color: rgb(60 60 67 / var(--tw-text-opacity));
+    border-width: 1px;
+    border-style: solid;
+    --tw-border-opacity: 0.5;
+    border-color: rgb(234 236 239 / var(--tw-border-opacity));
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out; /* 添加背景色过渡效果 */
+}
+
+/* 新增博客列表项悬停效果 - 添加背景颜色变化 */
+.blogItems:hover {
+    transform: scale(1.04);
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); /* 渐变背景 */
+    border-color: #dee2e6;
+}
+
+.blogItems .blogItemsMainContain {
+    padding: 0;
+    width: auto;
+}
+
+
+/* 博客内容布局 */
+.blogContent {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 文章摘要图片容器 */
+#blogItemSummaryImgContain {
+    border-radius: .5rem;
+    /*padding: 10px;*/
+    border: none;
+    margin-left: 5px;
+    max-width: 320px;
+    height: auto;
+    float: none;
+    margin: 0px;
+    /*display: inline-block;*/
+    align-items: center;
+    overflow: hidden;
+}
+
+
+
+
+/* 卡片列表布局 */
+.softlist{
+    flex-direction: row !important; /* 覆盖默认flex方向 */
+    flex-wrap: wrap;
+}
+
+/* 单个卡片项样式 */
+.soft {
+    color: #EEE;
+    width: 448px;
+    height: 108px;
+    margin-right: 12px;
+}
+
+/* 卡片列表中的图片容器尺寸覆盖 */
+#blogItemSummaryImgContain {
+    
+    height: 100px !important; /* 覆盖默认高度 */
+}
+
+/* 卡片内部样式调整 */
+.soft .blogItemsMainContain .type-text .blogContent #blogItemSummaryImgContain{
+   width: 220px !important; /* 多层嵌套选择器覆盖 */
+     height: 50px !important;
+    border-radius: 14px;
+    margin-right:12px;
+    margin-top: 8px;
+}
+
+/* 卡片标题文本截断 */
+.soft .blogItemsMainContain .type-text  #blogItemTitle{
+ display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 卡片文章摘要文本截断 */
+#blogItemSummary{
+ display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+        height: 92px;
+}
+
+
+
+
+/* 版权信息样式 */
+#copyright{
+font-size: 14px;
+    color: #a1a1a1;
+}
+#copyright P{
+margin:0;
+}
+
+/* 文件下载按钮样式 */
+.role-file{
+    padding: 2px 10px;
+    background: #020202;
+    color: #FFF;
+    border-radius: 6px;
+}
+.role-file::before{
+    content:"⇩"; /* 下载图标 */
+    margin-right:6px;
+}
+.role-file:hover{
+  background-color: #5492e2;
+    color:#FFF;
+}
+
+/* 回到顶部按钮 */
+#onGoTop {
+    position: fixed;
+    display: flex;
+    bottom: 30px;
+    right: 19vw;
+    height: 30px;
+    width: 30px;
+    background: #37363661;
+    border-radius: 50%;
+    padding: 3px;
+    opacity: 0;
+    transition: 0.5s ease;
+    cursor: pointer;
+    z-index: 2;
+    align-items: center;
+}
+
+/* 中等屏幕尺寸回到顶部按钮位置调整 */
+@media (max-width: 80em) {
+    #onGoTop {
+        right: 8vw; /* 覆盖默认右侧位置 */
+    }
+}
+
+/* 回到顶部按钮悬停效果 */
+#onGoTop:hover {
+    background: #999999;
+    transform: translateY(-5px);
+}
+
+/*右侧边栏样式*/
+#otherPlatformBar {
+    margin-top: 12px;
+    border-top: 1px solid #EEE;
+    padding-top: 12px;
+}
+
+/* 分类徽章样式 */
+.categoryBadge {
+    padding: 0;
+    padding-right: 1rem;
+}
+
+/* 分类卡片样式 */
+.caregoryCard {
+    text-align: left;
+}
+
+/* 分类卡片高度限制 */
+.cardheight {
+    max-height: 280px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+/* 文章计数样式 */
+#articleCount {
+    margin-right: 12px;
+}
+
+/* 标签样式 */
+.tag {}
+
+.tag .tagItem {
+    box-shadow: none;
+    font-size: 12px;
+    padding: 3px 10px;
+    color: #666;
+    font-weight: normal;
+}
+
+/* 分类卡片图标样式 */
+.caregoryCard .feather-tag {
+    margin-top: 10px;
+    margin-right: 6px;
+}
+
+/* 图片点击效果 */
+.image {
+    cursor: pointer;
+}
+
+/* 搜索容器样式 */
+.searchContainerStyle {
+    position: fixed;
+    top: 80px;
+    display: none;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 5px;
+    flex-direction: column;
+    width: 50%;
+    cursor: pointer;
+    box-shadow: 0 10px 10px rgb(0 0 0 / 18%);
+    padding: 20px;
+    z-index: 1000;
+    max-height: 60%;
+    overflow: none;
+    animation: slideIn .5s ease-in-out;
+}
+
+/* 搜索输入框样式 */
+#searchInput {
+    border: none;
+    border-bottom: 1px solid #ededed;
+    padding: 5px;
+    width: 90%;
+    outline: 0;
+    height: 40px;
+    font-size: 16px;
+}
+
+/* 搜索结果区域 */
+#searchResults {
+    height: 90%;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+/* 搜索项样式 */
+.searchItems {
+    color: #666;
+    font-weight: 400;
+}
+
+.searchItems:hover {
+    color: var(--blue); /* 使用CSS变量 */
+}
+
+/* 搜索结果标题样式 */
+.itemsTitle {
+    margin: .8em 0;
+    padding-left: .5em;
+    border-left: none;
+    height: 42px;
+    line-height: 42px;
+}
+
+/* 公告样式 */
+#announcement {
+    background: #FFF;
+}
+
+/* 卡片容器样式 */
+.cardContainerStyle {
+    position: absolute;
+    order: 3;
+    top: 70px;
+    width: 18vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff00;
+    cursor: pointer;
+    margin-left: 1vw;
+}
+
+/* 打赏按钮样式 */
+#rewardBtn {
+    padding: 8px 24px;
+    font-size: 16px;
+    background-color: #f25d8e;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+}
+
+/* 咖啡图标颜色，修改后暂未用上 */
+.coffee {
+    color: #939393;
+}
+
+/* 移动端导航链接默认隐藏 */
+.navbar-links-mobile{
+    display:none;
+}
+
+/* 响应式设计：中等屏幕尺寸全面适配 */
+@media (max-width: 80em) {
+    /* 移动端标题左对齐 */
+    #title {
+    text-align: left !important; /* 覆盖居中样式 */
+}
+    
+    /* 移动端内容头部布局调整 */
+    #contentHeader{
+    justify-content: flex-start;
+    position: relative;
+    height: auto;
+    display: flex;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 12px;
+    }
+
+    /* 移动端博客项宽度调整 */
+    #blogItems {
+    width: 100% !important; /* 覆盖默认宽度 */
+    }
+
+    /* 移动端回到顶部按钮调整 */
+    #onTop {
+    right: 10px !important;
+    width: 25px !important;
+    height: 25px !important;
+    bottom: 50px !important;
+    }
+
+    /* 移动端平台图标间距调整 */
+    .platformStyle {
+    margin: 0px 3px !important;
+    }
+
+    /* 移动端卡片容器隐藏 */
+    .cardContainerStyle {
+    width: 100vw !important;
+    position: unset !important;
+    display: none !important; /* 覆盖显示状态 */
+    }
+
+    /* 移动端博主信息标题 */
+    .bloggerInfoTitleStyle {
+    font-size: 0.7rem;
+    margin-bottom: 3px;
+    }
+
+    /* 移动端博主信息卡片 */
+    .bloggerInfoCardStyle {
+    width: 100vw !important;
+    margin: 5px auto 5px auto !important;
+    }
+
+    /* 移动端导航栏样式 */
+    #navigationBar {
+    height: 60px;
+    background-color: #ffffff9e;
+    display:flex;
+    justify-content: space-between;
+    }
+
+    /* 移动端菜单卡片动画 */
+    #menuCard {
+    animation: fromRightToLeftAppearing 0.5s ease-in-out !important;
+    }
+
+    /* 移动端博主信息卡片动画 */
+    #bloggerInfoCard {
+    animation: fromLeftToRightAppearing 0.5s ease-in-out !important;
+    }
+
+    /* 移动端网站标题布局 */
+    #siteTitle {
+    position: unset;
+    margin-left: 1rem;
+    align-items: center;
+    height: 100%;
+    }
+
+    /* 移动端网站图标尺寸 */
+    #siteTitle > img {
+    width: 20px;
+    }
+
+    /* 移动端导航项隐藏 */
+    #navigationItems {
+    position: unset;
+    overflow-x: auto;
+    display:none; /* 覆盖显示状态 */
+    white-space: nowrap;
+    width: 80vw;
+    }
+    
+    #navigationItems > :first-child {
+    margin-left: auto !important;
+    display:none; /* 覆盖显示状态 */
+    }
+    
+    #navigationItems > :nth-last-child(2) {
+    margin-right: auto !important;
+    }
+
+    /* 移动端导航项样式 */
+    .navigationItemsStyle {
+    margin: 0px 5px;
+    background-color: #FFF;
+    }
+    
+    .with-submenu{
+    width: 100%;
+    padding: 14px;
+    text-align: left;
+    border: none;
+    display: flex;
+    background-color: #FFF;
+    border-bottom: 1px solid #EEE;
+    justify-content: space-between;
+    }
+
+    /* 移动端基础字体调整 */
+    body {
+    font-size: 16px !important; /* 覆盖默认字体大小 */
+    }
+
+    /* 移动端主内容区域全面调整 */
+    #main {
+    margin: 0px !important; /* 覆盖默认margin */
+    padding: 60px 30px 30px 30px !important; /* 覆盖默认padding */
+    width: 80% !important; /* 覆盖默认宽度 */
+    }
+
+   
+    
+    /* 移动端菜单按钮显示 */
+    #toggleMenuButton,#searchButton-mobile {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 3em;
+    text-align: center;
+    justify-content: center;
+    position: unset;
+    }
+    
+    .navbar-buttom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+
+    /* 移动端图片最大宽度限制 */
+    .ck-content .image img {
+    max-width: 90% !important; /* 覆盖默认最大宽度 */
+    }
+
+    /* 移动端布局调整 */
+    #layout {
+    margin: 0px;
+    }
+
+    /* 移动端目录面板样式 */
+    #toc-pane,#outline-menu-nav {
+    display: none; /* 默认隐藏 */
+    background-color: white;
+    border-radius: 5px;
+    width: 100% !important; /* 覆盖默认宽度 */
+    padding: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 50%;
+    top: 50%;
+    z-index: 99;
+    max-width: 100%;
+    box-shadow: 0px -8px 10px #EEE;
+    opacity: 1;
+    transform: translateY(100%);
+    animation: slide-down 0.5s forwards;
+    }
+    
+    .menu-tree-root ul{
+    padding-left:39px;
+    }
+   
+    .toc-pane-content{
+    background:#FFF;
+    z-index: 100;
+    position: relative;
+    padding: 12px;
+    height: 100%;
+    }
+    
+    .toc-pane-content-title{
+    display:flex;
+    justify-content: space-between;
+    padding: 12px;
+    }
+    
+    /* 移动端目录关闭按钮显示，修复光标强制改成手型 */
+    #toc-pane-content-close,#left-menu-nav-close{
+    color: #979797;
+    font-size: 14px;
+    display:block; /* 覆盖隐藏状态 */
+    cursor: pointer;         /* 手型光标 */
+    }
+
+    /* 移动端目录滚动区域 */
+    #toc,.menu-tree-root{
+    height: 70%;
+    display: block;
+    overflow-y: auto;
+    overflow: hidden;
+    position: relative;
+    overflow-y: auto;
+    }
+    
+    #toc{
+    padding-left:12px;
+    }
+ 
+    /* 移动端搜索容器全屏适配 */
+    .searchContainerStyle {
+    top: 60px;
+    right: 0;
+    left: 0;
+    width: 100%; /* 覆盖默认宽度 */
+    }
+
+    /* 移动端电影信息字体调整 */
+    .filmTitle,
+    .watchDate {
+    font-size: 0.6rem;
+    }
+    
+    /* 移动端网站标题字体 */
+    #siteTitle a {
+    font-size: 1.2rem;
+    }
+
+    /* 移动端表格横向滚动 */
+    .table {
+    display: block !important; /* 覆盖表格显示方式 */
+    white-space: nowrap;
+    overflow-y: hidden;
+    }
+    
+    /* 移动端隐藏滚动条 */
+    ::-webkit-scrollbar {
+    display: none; /* 覆盖默认滚动条显示 */
+    }
+    
+    /* 移动端下拉菜单全屏宽度 */
+    .dropDownStyle {
+    left: 0;
+    width: 100vw; /* 视口宽度 */
+    align-items: center;
+    }
+}
+
+/* 水印背景注释（当前被注释掉） */
+/*
+html {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" ><text opacity="0.2" x="0" y="30" fill="pink" transform="rotate(30 20,40)">文字印</text></svg>'),
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" ><text opacity="0.2" x="100" y="50" fill="pink" transform="rotate(30 20,40)">文字印</text></svg>');
+  background-size: 150px 140px;
+  pointer-events: none;
+}
+*/
+
+
+/* ===== 新增代码块折叠按钮 ===== */
+pre.folded {
+  max-height: 220px;
+  overflow: hidden !important;          /* 纵向收起，禁用滚动 */
+  transition: max-height .3s ease;
+}
+pre.unfolded {
+  max-height: none !important;
+}
+
+/* 新增代码块底部固定按钮 */
+pre .code-fold-btn {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background: linear-gradient(to bottom, transparent, #1e1e1e 60%);
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 10;
+  pointer-events: auto;
+}
+pre .code-fold-btn::before { content: "▼"; }
+pre.unfolded .code-fold-btn::before { content: "▲"; }
+
+/* 新增代码块顶部任务栏按钮 */
+.code-toolbar-fold {
+  position: absolute;
+  left: 72.5px; top: 3px;
+  width: 28px; height: 24px;
+  line-height: 24px;
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  z-index: 1;
+  opacity: .8;
+  transition: opacity .2s;
+}
+.code-toolbar-fold:hover { opacity: 1; }
+
+.code-toolbar-fold::before {
+  content: 'Collapse/Expand' !important;
+  color: #fff !important;        
+  font-size: 10px !important;
+  line-height: 24px !important;
+}

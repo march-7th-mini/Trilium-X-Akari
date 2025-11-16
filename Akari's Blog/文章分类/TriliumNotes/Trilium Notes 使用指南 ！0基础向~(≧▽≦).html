@@ -1,0 +1,146 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>Trilium Notes 使用指南 ！0基础向~\(≧▽≦)/~快速上手</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>Trilium Notes 使用指南 ！0基础向~\(≧▽≦)/~快速上手</h1>
+
+      <div class="ck-content">
+        <div class="content">
+          <div class="ck-content">
+             <h2>前言</h2>
+
+            <blockquote>
+              <p><span style="color:hsl(120,75%,26%);"><strong>此篇指南主要目的——是记录和帮助像我一样的0代码基础的小白(●'◡'●)。</strong></span>
+
+              </p>
+            </blockquote>
+            <p><strong>首先，感谢</strong><a href="https://github.com/zadam"><strong>zadam</strong></a><strong>大佬开发开源 Trilium ，感谢</strong>
+
+              <a
+              href="https://github.com/Nriver"><strong>Nriver</strong>
+
+                </a><span style="color:rgb(0,0,0);"><strong>大佬对Trilium Notes</strong></span><strong>的汉化，感谢GitHub社区各位网友大佬无私分享的插件和优化。</strong>
+
+            </p>
+            <p>我整理的此篇指南主要针对 <code>Trilium Notes v0.63.7_20240530 丨汉化版 nriver/trilium-cn</code> 版本进行测试验证。</p>
+            <p><span style="color:hsl(270,75%,60%);">注意：<code>Trilium Notes v0.63.7</code>版本已<strong>停止维护</strong>！</span>
+
+            </p>
+            <ul>
+              <li><span style="color:hsl(270,75%,60%);">（<s>虽然TriliumNext新功能无法体验，但是因此可以有效避免新增更新带来的兼容性和其他问题 </s>≧ ﹏ ≦）</span>
+
+              </li>
+            </ul>
+            <hr>
+            <p><strong>此文</strong><span style="color:hsl(0,75%,60%);"><strong>不完全适用</strong></span><strong>zadam目前仍持续维护的新版</strong>
+
+              <span
+              style="color:hsl(0,75%,60%);"><strong>Trilium Next</strong>
+
+                </span>，若要尝试Trilium Next新增功能、特性，请积极探索GitHub社区。</p>
+            <p>到GitHub 可下载最新的<a href="https://github.com/TriliumNext/Trilium">TriliumNext</a>安装包，不过注意——由于<code>目前最新的Trilium Next与Trilium Notes 总体核心功能相差不大，但是两者数据架构不通用，因此GitHub上分享的一些插件无法完美适配Trilium Next</code>，如果你特别在意Trilium
+              Next的新增功能，由于很多GitHub上的早期的插件是按照Trilium Notes 进行设计的， 使用Trilium Next时很多易用插件需要你自己重新适配。由于UP是真的0代码基础业余人员，故无法向你提供有效帮助。</p>
+            <hr>
+             <h2>Trilium Notes 是什么、能做什么、怎么用</h2>
+
+            <p style="margin-left:0px;">Trilium Notes 是 zadam开发的一款开源、跨平台的「分层笔记」应用，可以构建无限节点的知识库笔记，支持双链笔记，自动生成知识笔记地图，前端主题页面可以高度自由定制等，既可以当单机笔记使用，也能自己搭建服务器部署同步。</p>
+            <figure
+            class="image">
+              <img style="aspect-ratio:1920/1032;" src="1_Trilium Notes 使用指南 ！0基础向~(≧▽≦).png"
+              width="1920" height="1032">
+              <figcaption>默认主题界面</figcaption>
+              </figure>
+              <p style="margin-left:0px;"><strong>一、核心定位</strong>
+
+              </p>
+              <ul>
+                <li>
+                  <p style="margin-left:0px;">树状层级：笔记无限嵌套，像文件夹一样管理；支持“克隆”功能，同一条笔记可镜像到多处</p>
+                </li>
+                <li>
+                  <p style="margin-left:0px;">本地优先：数据默认存在本地 SQLite，支持整库或单笔记 AES-256 加密</p>
+                </li>
+                <li>
+                  <p style="margin-left:0px;">自托管：可一键启动内置服务器，浏览器即可远程访问；也提供 Docker等部署方案</p>
+                </li>
+              </ul>
+              <p style="margin-left:0px;"><strong>二、主要功能亮点</strong>
+
+              </p>
+              <ul>
+                <li>
+                  <p style="margin-left:0px;">编辑器：所见即所得 + Markdown 即时预览，Nriver大佬的汉化版集成了内嵌 Excalidraw 手绘、LaTeX 公式、代码高亮</p>
+                </li>
+                <li>
+                  <p style="margin-left:0px;">导航与检索：全文/属性搜索、关系图谱、链接图、note hoisting（聚焦单分支）</p>
+                </li>
+                <li>
+                  <p style="margin-left:0px;">自动化：支持 JavaScript 脚本、REST API，可做模板、批量操作、外部集成</p>
+                </li>
+                <li>
+                  <p style="margin-left:0px;">版本控制：每次修改自动生成历史快照，可随时回滚</p>
+                </li>
+                <li>
+                  <p style="margin-left:0px;">导入导出：笔记批量迁移无压力</p>
+                </li>
+                <li>
+                  <p style="margin-left:0px;">分享笔记：一键分享笔记、支持自定义博客样式、无需操心格式调整。</p>
+                </li>
+              </ul>
+              <p style="margin-left:0px;"><strong>三、典型使用场景</strong>
+
+              </p>
+              <ul>
+                <li>
+                  <p style="margin-left:0px;">个人知识管理 (PKM)：在有10万条笔记的时候，依旧能保持比较好的可用性与性能。</p>
+                </li>
+                <li>
+                  <p style="margin-left:0px;">项目/任务管理：用属性系统跟踪状态、deadline</p>
+                </li>
+                <li>
+                  <p style="margin-left:0px;">研究与写作：资料收集→ 草稿 → 成文，层级+链接双管齐下</p>
+                </li>
+                <li>
+                  <p style="margin-left:0px;">日记/日志：内置日记模式，自动生成每日页面</p>
+                </li>
+              </ul>
+              <hr>
+               <h2>为什么要选择Trilium Notes</h2>
+
+              <ul>
+                <li>曾经我测试过使用思维导图软件构建大量节点，但使用时会明显异常的卡顿；</li>
+                <li>前些年我也测试过使用知识图谱软件来构建大量节点，但实际体验给我个人的感觉是：这知识图谱除了好看，明显不是给人分享笔记、传播知识用的。</li>
+                <li>记笔记、搭建个人知识库是我们当下值得一做的，搭建个人博客其实就是个人笔记的输出。</li>
+                <li>传统的笔记与博客实际上是处于一种分离状态，本质上是把自己的笔记复制一份并且部署到博客平台而已，导致博客与笔记割裂感强；</li>
+                <li>另外修改笔记是一件常有的事情，调整博文排版格式也是常有的事，同时博文图片管理也是个难题。</li>
+                <li>直到今年接触到Trilium Notes ! 测试后，没错，这就是我一直想要的工具。</li>
+              </ul>
+              <p>&nbsp;</p>
+              <p>基于 trilium 的博客发布方案是我找到的最满意的博客发布方案，与其他博客发布方案相比有以下几个优点：</p>
+              <ol>
+                <li>笔记与博文无缝衔接</li>
+                <li>将知识输出环节融入知识管理流程中，无需其他发布工具</li>
+                <li>图片管理方便</li>
+                <li>博文的发布、修改和下架十分方便</li>
+              </ol>
+              <p><strong>总结的话，Trilium Notes开源、数据主权、性能、可玩性全部拉满，十万级笔记不卡顿。放最便宜的 1 核 1G 云服务器即可。</strong>
+
+                <br>
+                <br>&nbsp;</p>
+              <hr>
+              <p>&nbsp;</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>

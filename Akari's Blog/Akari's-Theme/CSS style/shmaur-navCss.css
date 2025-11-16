@@ -1,0 +1,428 @@
+/*!
+ * WhiteMinimalist-Theme v1.1
+ * https://www.shmaur.com/
+ * shmaur-navCss
+ * Licensed Apache-2.0 © shmaur
+ * 顶部导航与左侧目录导航CSS，增加注释加小修改Akari_404
+ * 桌面端右上角新增的☰导航按钮，实现一键展开全部导航菜单，代码是在WhiteMinimalist-Theme.ejs，不是在这个文件中
+ * Akari's Blog:  https://www.aiphm.cn/share/index.html
+ */
+
+/* 顶部导航栏容器 */
+#navigationBar {
+            z-index: 1001;
+            display: flex;
+            height: 3rem;
+            box-shadow: none;
+            align-items: center;
+            background-color: #fff9;
+            box-shadow: 0 5px 5px #EEE;
+            backdrop-filter: blur(2px);    /* 毛玻璃背景模糊 */
+            /* --tw-backdrop-blur: blur(24px);
+            --tw-backdrop-saturate: saturate(1.5);
+            -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+            backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia); */
+        }
+/* 窄屏：增加导航栏高度，给换行留空间 */
+        @media (max-width: 80em) {
+            #navigationBar {
+                height: 5rem;
+            }
+        }
+/* 移动端：导航栏左右留间距 */
+        @media (min-width: 768px) {
+            .navbar-container {
+                padding-left: 2rem;
+                padding-right: 2rem
+            }
+        }
+/* 左上角站点标题 */
+        #siteTitle {
+
+            display: flex;
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+            font-weight: 600;    /* 半粗体 */
+        }
+/* 窄屏：标题上下留边距 */
+        @media (max-width: 80em) {
+             #siteTitle {
+                margin: 12px 0;
+                  }
+        }
+/* 左上角站点Logo：图片样式：圆形、固定尺寸、隐藏溢出 */
+        #siteTitle .logo {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+/* 顶部导航链接整体容器 */
+        #navigationItems {
+           /* position: absolute;
+            right: 1rem;
+            top: 0px; */
+            text-shadow: none;
+            
+            display: flex;
+            height: 4rem;
+            align-items: center;
+            white-space: nowrap;
+            border-top:none;
+        }
+/* 窄屏：取消绝对定位，允许横向滚动 */
+        @media (max-width: 80em) {
+            #navigationItems {
+                width: auto;
+                position: unset;
+                
+                overflow-x: auto;
+            }
+        }
+
+/* 移动端：导航链接左侧留间距 */
+        @media (min-width: 768px) {
+            .navbar-links {
+                margin-left: 1.5rem
+            }
+        }
+/* 导航链接弹性容器 */
+        #navigationItems .navbar-links {
+            align-items: center
+        }
+
+        @media (min-width: 768px) {
+            .navbar-links {
+                display: inline-flex
+            }
+        }
+@media (max-width: 80em) {
+ #navigationItems .navbar-links {
+                display: inline-flex
+                
+            }
+}
+/* 单个导航项 */
+        .navbar-links .navbar-links__item {
+            display: block;
+            padding-top: 0;
+            padding-bottom: 0
+        }
+
+       
+/* 导航项间距：默认0，桌面端非首项留间距 */
+        .navbar-links .navbar-links__item:not(:first-child) {
+            margin-left: 0
+        }
+
+        @media (min-width: 768px) {
+            .navbar-links .navbar-links__item:not(:first-child) {
+                margin-left: 1.5rem
+            }
+        }
+/* 导航链接文字 */
+        .navbar-links .navbar-links__item>.link {
+            display: flex;
+            align-items: center;
+            font-size: .875rem;
+            line-height: 1.25rem;
+            font-weight: 600
+        }
+/* 导航图标与文字间距 */
+        .navbar-links .navbar-links__item>.link .xicon-container {
+            margin-right: .125rem
+        }
+/* 当前激活路由高亮 */
+        .navbar-links .navbar-links__item .router-link-active {
+            --tw-text-opacity: 1 !important;
+            color: rgb(93 103 232 / var(--tw-text-opacity)) !important
+        }
+/* 导航链接点击区域高度统一 */
+        .navbar-links__item>a,
+        .navbar-links__item .dropdown-link__title {
+            height: 3.5rem
+        }
+/* 导航下拉菜单面板 */
+.dropDownStyle{
+             background:#FFF;
+         }
+         .dropDownStyle>a{
+             max-width: 180px;
+             overflow: hidden;
+             white-space: nowrap;
+             text-overflow: ellipsis;
+             font-size: 14px;
+             padding:0.3rem 0 
+         }
+/* 下拉菜单内部按钮 */
+ .menuLinkStyle{
+          font-size: 14px;
+          width:100%;
+          padding: 6px 0;
+          cursor: pointer;
+         }
+/* 移动端全屏导航面板 */
+.navbar-links-mobile{
+   margin-top: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    background-color: #fff;
+    padding: 1rem;
+    z-index: 9999;
+}
+/* 折叠子菜单 */
+.submenu {
+    display: none; /* Hidden by default */
+    transition: max-height 0.3s ease-out;
+  }
+
+  .submenu.active {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      font-size: 14px;
+      background-color: #f9f9f9;
+  }
+.submenu a{
+    width:100%;
+    padding: 10px 0;
+    padding-left: 26px;
+}
+/* 移动端菜单滚动 */
+.navbar-links-mobile.active {
+        display: block;
+        overflow: overlay;
+        overflow-y: auto;
+  }
+/* 下拉箭头旋转 */
+.with-submenu.active svg {
+    transform: rotate(-180deg);
+  }
+ .navbar-links__item .link svg {
+   
+    transition: transform 0.3s;
+  }
+/* 移动端菜单项容器 */
+.navigationItemsStyle-mobile{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0px 5px;
+    width: 100%;
+    background-color: #FFF;
+}
+/* 移动端汉堡按钮 */
+#toggleMenuButton {
+  border: none;
+  background: #ffffff00;
+  z-index: 1000;
+  width: 1em;
+  height: 1em;
+  display: none;
+  color: black;
+  cursor: pointer;
+  position: absolute;
+  right: 0.5em;
+}
+/* 汉堡图标动画 */
+#toggleMenuButton .feather-menu line {
+  transition: all 0.3s ease;
+}
+
+#toggleMenuButton.active .feather-menu line:first-child {
+  opacity: 0;
+  transform: translate(-100%, 0);
+}
+
+#toggleMenuButton.active .feather-menu line:nth-child(2) {
+  transform: translate(0, 6px);
+  rotate: 45deg;
+  transform-origin: center;
+}
+
+#toggleMenuButton.active .feather-menu line:last-child {
+  transform: translate(0, -6px);
+  rotate: -45deg;
+  transform-origin: center;
+}
+/* 移动端搜索按钮预留 */
+#searchButton-mobile{
+    display:none;
+}
+
+
+/* 左侧树形目录 */
+.left-menu-nav{
+    /*animation: fromLeftToRightAppearing 0.5s ease-in-out;*/
+    z-index: 1;
+    position: fixed;
+    top: 80px;           /* 距离顶部 80px */
+    left: 20px;
+    width: 18.5vw;        /* 动态宽度 */
+    /*height: calc(100vh - 70px);  测试有点多余，下方有相似内容若取消注释，左侧目录导航栏会永久多一根滚动条。——高度铺满屏幕（减去顶部 70px） */
+    /*overflow-y: auto;     纵向滚动条下方有相同内容，所有注释掉这里 */
+    display:block;
+    opacity: .5;   /* 左侧导航默认半透明透明度 */
+}
+.left-menu-nav:hover{
+    opacity: 1;    /* 鼠标悬停时完全显示 */
+}
+
+/* 树节点的样式 */
+.left-menu-nav ul {
+    padding-left: 0px; /* 层级缩进 */
+    color: #666;
+    font-size:18px;
+    display:none;    /* 默认折叠，由 JS 控制展开 */
+}
+
+.left-menu-nav ul > li {
+    list-style-type: decimal;    /* 原来无任何标记显示，修改为数字序号 */
+
+}
+/* 三级节点缩进 */
+.left-menu-nav ul > li ul > li ul {
+    padding-left: 28px;
+}
+/* 根级菜单列表 */
+.menulist{
+    padding:6px 0;
+}
+/* 根级菜单滚动容器 */
+.menu-tree-root{
+    padding-left: 0;
+    height: calc(100vh - 130px); /* 计算 ul 的高度，确保在页面内显示 */
+    overflow-y: auto; /* 启用滚动 */
+}
+
+
+/* 树节点的标题样式 */
+.node-title {
+    cursor: pointer;
+    display: block;
+    padding: 5px;
+    border-radius: 4px;
+    color: #bd003f;
+    font-weight: bold;
+    white-space: nowrap;       /* 禁止换行 */
+    overflow: hidden;          /* 隐藏超出内容 */
+    text-overflow: ellipsis;   /* 显示省略号 */
+}
+
+/* 树节点的选中样式 选中高亮 */
+.node-title.selected, 
+.leaf-title.selected { /* 同时应用于叶节点 */
+    color: var(--blue);             /* 字体颜色改变 */
+    font-weight: bold;          /* 加粗 */
+    padding-left: 8px;          /* 调整内边距以适应边框 */
+}
+/* 树节点的 hover 样式 悬停背景*/
+.node-title:hover {
+    background-color: #f0f0f0;
+}
+
+/* 树叶节点（无子节点）的样式 */
+.leaf-title {
+    cursor: default;
+    display: block;
+    padding: 5px;
+    color: #590f0f;
+cursor: pointer;
+    white-space: nowrap;       /* 禁止换行 */
+    overflow: hidden;          /* 隐藏超出内容 */
+    text-overflow: ellipsis;   /* 显示省略号 */
+}
+
+/* 树叶节点的 hover 样式 */
+.leaf-title:hover {
+    background-color: #f9f9f9;
+}
+/* 左侧导航隐藏类，由 JS 切换 */
+.menu-hidden{
+    display:none;
+}
+
+/* 移动端：显示行内导航 & 隐藏左侧树形目录 */
+ @media (min-width: 768px) {
+            .navbar-links .navbar-links__item {
+                display: inline-block
+                    padding-right:8px;
+            }
+            .left-menu-nav{
+    display:none;
+}
+        }
+
+/* 窄屏：强制隐藏左侧树形目录 */
+@media (max-width: 80em) {
+.left-menu-nav{
+                display:none;
+            }
+}
+/* 宽屏：重新显示左侧树形目录 */
+ @media (min-width: 1080px) {
+           
+            .left-menu-nav{
+                display:block;
+            }
+        }
+
+
+
+
+
+
+
+
+/*左侧目录新增以下功能，搜素与折叠展开*/
+/* 搜索框样式 */
+.search-box {
+    position: relative;
+    /*margin-top: 10px;*/
+    width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    width: calc(100% - 100px); /* 给按钮留出空间 */
+}
+
+.search-box input[type="text"] {
+    width: calc(100% + 10px);
+    padding: 5px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+
+.search-box .clear-button {
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 16px;
+}
+
+/* 折叠/展开按钮样式 */
+.toggle-button {
+    cursor: pointer;
+    padding: 5px;
+    background-color: #547afc42;
+    border: none;
+    border-radius: 4px;
+    /*margin-top: 10px;*/
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 20px;
+   /* width: 80px;  固定宽度 */
+}
+/* 容器样式 - 只添加这一条来确保同行显示 */
+.search-toggle-container {
+    display: block;
+    white-space: nowrap;
+}
+

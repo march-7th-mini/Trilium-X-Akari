@@ -1,0 +1,62 @@
+/*!
+ * WhiteMinimalist-Theme v1.1
+ * https://www.shmaur.com/ 
+ * shmaur-footerCss
+ * Licensed Apache-2.0 © shmaur
+* 页脚样式CSS，增加注释加小修改，优化手机端页脚样式Akari_404
+* 页脚显示内容、页脚图标到 WhiteMinimalist-Theme.ejs 丨<div id="footer">进行添加
+* Akari's Blog:  https://www.aiphm.cn/share/index.html
+ */
+#footer {
+    margin-top: 60px;
+    /*height: 30px;*/
+    width: auto;
+    --tw-border-opacity: 1;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 14px;
+    color: #989898; /* 文本颜色 */
+    /*background: #5461fc;  背景颜色 */
+    backdrop-filter: blur(50px);  /* 毛玻璃背景模糊 */
+    box-shadow: 0 -5px 10px #EEE;  /* 添加一个向上（y偏移为-5像素）的阴影，颜色为浅灰色（#EEE） */
+}
+
+.xicon-container.left {
+    flex-direction: row;
+    align-items: center;
+}
+
+.xicon-container {
+    display: inline-flex;
+    cursor: pointer;
+}
+
+svg {
+    display: inline-block;
+}
+
+.xicon-container.left > svg {
+    margin-right: .375rem;
+}
+
+/* 手机端自动换行布局，媒体查询：当屏幕宽度小于768px时，应用以下样式 */
+@media (max-width: 768px) {
+    #footer {
+        display: flex; /* 使用flex布局 */
+        flex-direction: column; /* 子项垂直排列 */
+        align-items: center; /* 子项在交叉轴上居中对齐 */
+        margin-top: 0px;
+    }
+
+    .xicon-container.left {
+        flex-direction: column; /* 在手机模式下，左侧图标容器的子项也垂直排列 */
+        align-items: center; /* 子项在交叉轴上居中对齐 */
+    }
+
+    .xicon-container.left > svg {
+        margin-right: 0; /* 移除SVG元素的右侧外边距 */
+        margin-bottom: .375rem; /* 添加底部外边距以分隔图标 */
+    }
+}

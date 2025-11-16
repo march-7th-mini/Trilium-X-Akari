@@ -1,0 +1,85 @@
+/*!
+ * WhiteMinimalist-Theme v1.1
+ * https://www.shmaur.com/ 
+ * shmaur-homeCss
+ * Licensed Apache-2.0 © shmaur
+ *增加注释-阿卡林の笔记，原shmaur用在主界面的大标题动画特效，修改用来美化页脚
+ *页脚动画特效显示的文字可到 WhiteMinimalist-Theme.ejs 丨<div class="g-container">进行修改
+ * Akari's Blog:  https://www.aiphm.cn/share/index.html
+ */
+
+/* 容器样式 */
+.g-container {
+    margin: auto; /* 水平居中 */
+    text-align: center; /* 文本居中对齐 */
+    /*order: -2; /* 在Flexbox布局中设置顺序 */
+}
+
+
+
+/* 响应式设计：屏幕宽度小于80em */
+@media (max-width: 80em) {
+    .g-container {
+        display: none; /* 隐藏容器 */
+    }
+}
+
+/* 标题样式 */
+.g-container .title {
+    position: relative; /* 使伪元素可以相对于标题定位 */
+    font-size: 60px; /* 标题字体大小 */
+    font-weight: bold; /* 标题字体加粗 */
+    /*background: #fff;  标题背景颜色 */
+    backdrop-filter: blur(5px);  /* 毛玻璃背景模糊 */
+    color: #ff0707; /* 标题文字颜色 */
+    margin: 0; /* 标题外边距为0 */
+    overflow: hidden; /* 隐藏超出标题容器的内容 */
+
+}
+
+/* 副标题样式 */
+.g-container .txt {
+    position: relative; /* 使文本可以使用绝对定位的子元素 */
+    font-size: 14px; /* 文本字体大小 */
+    color: #989898; /* 文本颜色 */
+    /*background: #fff;  标题背景颜色 */
+    backdrop-filter: blur(5px);  /* 毛玻璃背景模糊 */
+    padding: 10px 0 20px 0; /* 文本内边距 */
+    font-family: Raleway, sans-serif; /* 文本字体 */
+    letter-spacing: 3px; /* 字母间距 */
+    text-transform: uppercase; /* 文本转换为大写 */
+    white-space: pre; /* 保留空白符和换行符 */
+}
+
+/* 标题的伪元素动画 */
+.g-container .title::before, .g-container .title::after {
+    content: ""; /* 创建伪元素 */
+    position: absolute; /* 绝对定位 */
+    top: -923px; /* 顶部位置 */
+    left: 50%; /* 左偏移50% */
+    width: 2000px; /* 伪元素宽度 */
+    height: 2000px; /* 伪元素高度 */
+    border-radius: 45% 48% 43% 47%; /* 伪元素的圆角 */
+    transform: translate(-50%, -50%); /* 向左和向上移动50% */
+    background: rgba(3, 169, 244, .85); /* 伪元素背景颜色 */
+    animation: rotate 10s infinite linear; /* 10秒无限旋转动画 */
+    z-index: 1; /* 堆叠顺序 */
+    mix-blend-mode: lighten; /* 混合模式为“亮化” */
+}
+
+/* 标题的伪元素动画（后一个） */
+.g-container .title::after {
+    border-radius: 43% 47% 44% 48%; /* 不同的圆角 */
+    animation: rotate 10s infinite .5s linear; /* 10秒无限旋转动画，延迟0.5秒 */
+}
+
+/* 定义旋转动画 */
+@keyframes rotate {
+    0% {
+        transform: translate(-50%, -50%) rotate(0); /* 旋转0度 */
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg); /* 旋转360度 */
+    }
+}
+
