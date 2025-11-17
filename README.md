@@ -1,10 +1,13 @@
 ## 前言
 
-一个0代码基础的咸鱼，在AI-chat的帮助下历时整整3个月（几乎将我所有玩游戏的时间都贡献出来），今天（2025/11/16）这个博客主题总算正式发布了☆*: .｡. o(≧▽≦)o .｡.:*☆，主题名为：Akari's -Theme 。
+一个0代码基础的咸鱼，在AI-chat的帮助下历时整整3个月（几乎将我所有玩游戏的时间都贡献出来），今天（2025/11/16）这个博客主题总算正式发布了☆*: .｡. o(≧▽≦)o .｡.:*☆，
+
+**主题名为：Akari's -Theme**。
 
 **本博客主题：基于© shmaur ｜ © 东东  分享的trilium博客主题  Ankia、WhiteMinimalist 进行调试修改。**
 
 ![截图预览](https://www.aiphm.cn/share/api/attachments/b5G0ki5vv1LM/image/image.png)
+
 
 **注意：本主题是基于 Trilium Notes v0.63.7 版本进行完美测试适配，最新版Trilium Next不一定完全可用。**
 
@@ -60,5 +63,19 @@ Blog：[阿卡林の笔记 (aiphm.cn)](https://www.aiphm.cn/share/index.html)
   - 打磨移动端细节，移动端优先响应式，兼容主流现代浏览器，优化了众多细节bug。
 
 ## 使用方法
-下载附件，运行Trilium Notes，右键左侧树导航，导入到笔记（取消勾选安全导入），按F5或ctrl+r刷新页面。
-博客主题：Trilium X Akari 博客主题使用介绍详见我的博客文章：https://www.aiphm.cn/share/EFzcB6z2IYGo
+- 下载附件，运行Trilium Notes，右键左侧树导航，导入到笔记（取消勾选安全导入），按F5或ctrl+r刷新页面。
+- 博客主题：Trilium X Akari 博客主题使用介绍详见我的博客文章：https://www.aiphm.cn/share/EFzcB6z2IYGo
+
+## 致谢
+**Trilium博客主题：Ankia-Theme**  
+- 作者：东东        
+- 版本：v1.7
+- Github：https://github.com/dvai/Ankia-Thme
+- Blog：www.ankia.top
+
+**Trilium博客主题：WhiteMinimalist-Theme**
+- 作者：黄金_shmaur
+- 版本：v1.3
+- Github：https://github.com/Shmaur/WhiteMinimalist-Theme
+- Blog：www.shmaur.com
+
