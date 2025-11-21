@@ -13,9 +13,11 @@
 
 作者：Akari_404
 
-版本：v1.0
+版本：v1.1
 
-Blog：[阿卡林の笔记 (aiphm.cn)](https://www.aiphm.cn/share/index.html)
+附件：[Akari's Blog (V1.1_20251121).zip](https://www.aiphm.cn/share/api/attachments/NGndefU5ahWO/download)
+
+预览Blog：[阿卡林の笔记 (aiphm.cn)](https://www.aiphm.cn/share/index.html)
 
 **Akari's -Theme主题特点**
 
